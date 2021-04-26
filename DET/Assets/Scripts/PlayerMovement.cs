@@ -7,9 +7,10 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
+    private float playerSpeed = 7.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
+    private Animator anim;
 
     private Camera mainCamera;
 
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         mainCamera = FindObjectOfType<Camera>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -52,6 +54,42 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 pointToLookAt = cameraRay.GetPoint(rayLength);
             transform.LookAt(new Vector3(pointToLookAt.x, transform.position.y, pointToLookAt.z));
+        }
+
+        if(Input.GetKey(KeyCode.Z) )
+        {
+            anim.SetBool("IsRunning",true);
+        }
+        else
+        {
+            anim.SetBool("IsRunning", false);
+        }
+
+        if(Input.GetKey(KeyCode.Q) )
+        {
+            anim.SetBool("Left",true);
+        }
+        else
+        {
+            anim.SetBool("Left", false);
+        }
+
+        if(Input.GetKey(KeyCode.S) )
+        {
+            anim.SetBool("Back",true);
+        }
+        else
+        {
+            anim.SetBool("Back", false);
+        }
+
+        if(Input.GetKey(KeyCode.D) )
+        {
+            anim.SetBool("Right",true);
+        }
+        else
+        {
+            anim.SetBool("Right", false);
         }
     }
 }
