@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() 
     {
-        if(Input.GetKey(KeyCode.Z) )
+        if(Input.GetKey(KeyCode.W) )
         {
             anim.SetBool("IsRunning",true);
         }
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("IsRunning", false);
         }
 
-        if(Input.GetKey(KeyCode.Q) )
+        if(Input.GetKey(KeyCode.A) )
         {
             anim.SetBool("Left",true);
         }
