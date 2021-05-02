@@ -41,7 +41,7 @@ public class ZombieAttack : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= timeBetweenAttacks && playerInRange ) // && zombieHealth.currentHealth >0)
+        if(timer >= timeBetweenAttacks && playerInRange  && zombieHealth.currentHealth > 0)
         {
             Attack();
         }

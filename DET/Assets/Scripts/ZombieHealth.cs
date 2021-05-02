@@ -20,6 +20,7 @@ public class ZombieHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        currentHealth = startingHealth;
     }
 
     void Update()
@@ -28,15 +29,16 @@ public class ZombieHealth : MonoBehaviour
         {
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
         }
+       
     }
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    public void TakeDamage(int amount )//, Vector3 hitPoint)
     {
         if(isDead)
         return;
         currentHealth -= amount;
-        hitParticles.transform.position = hitPoint;
-        hitParticles.Play();
+       // hitParticles.transform.position = hitPoint;
+       // hitParticles.Play();
         if(currentHealth <=0)
         {
             Death();
@@ -48,6 +50,7 @@ public class ZombieHealth : MonoBehaviour
         isDead = true;
         capsuleCollider.isTrigger = true;
         anim.SetTrigger("Dead");
+       // Destroy(this.gameObject);
     }
 
     public void StartSinking()

@@ -58,7 +58,7 @@ public class PlayerShooting : MonoBehaviour
             ZombieHealth zombieHealth = shootHit.collider.GetComponent<ZombieHealth>();
             if(zombieHealth != null)
             {
-                zombieHealth.TakeDamage(damagePerShot, shootHit.point);
+              //  zombieHealth.TakeDamage(damagePerShot, shootHit.point);
             }
             gunLine.SetPosition(1, shootHit.point);
         }
