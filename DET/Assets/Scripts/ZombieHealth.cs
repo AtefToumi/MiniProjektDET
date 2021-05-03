@@ -12,7 +12,7 @@ public class ZombieHealth : MonoBehaviour
     Animator anim;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
-    bool isDead;
+    public bool isDead;
     bool isSinking;
 
     void Awake()
