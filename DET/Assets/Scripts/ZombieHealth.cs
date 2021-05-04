@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZombieHealth : MonoBehaviour
 {
     public int startingHealth = 100;
     public int currentHealth;
+    public Slider healthSlider;
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
 
@@ -37,9 +39,10 @@ public class ZombieHealth : MonoBehaviour
         if(isDead)
         return;
         currentHealth -= amount;
-       // hitParticles.transform.position = hitPoint;
-       // hitParticles.Play();
-        if(currentHealth <=0)
+        healthSlider.value = currentHealth;
+        // hitParticles.transform.position = hitPoint;
+        // hitParticles.Play();
+        if (currentHealth <=0)
         {
             Death();
         }

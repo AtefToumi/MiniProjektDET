@@ -27,44 +27,46 @@ public class PlayerShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
             Shoot();
         }
 
-        if(timer >= timeBetweenBullets * effectsDisplayTime)
+           if(timer >= timeBetweenBullets * effectsDisplayTime)
+           {
+               DisableEffects();
+           }
+       }
+
+       public void DisableEffects()
+       {
+           gunLine.enabled = false;
+           gunLight.enabled = false;
+       }  
+
+        void Shoot()
         {
-            DisableEffects();
-        }
-    }
 
-    public void DisableEffects()
-    {
-        gunLine.enabled = false;
-        gunLight.enabled = false;
-    }
+            timer = 0f;
+            gunLight.enabled = true;
+            gunLine.enabled = true;
+            gunLine.SetPosition(0, transform.position);
+            shootRay.origin = transform.position;
+            shootRay.direction = transform.forward;
 
-    void Shoot()
-    {
-        timer = 0f;
-        gunLight.enabled = true;
-        gunLine.enabled = true;
-        gunLine.SetPosition(0, transform.position);
-        shootRay.origin = transform.position;
-        shootRay.direction = transform.forward;
-
-        if(Physics.Raycast(shootRay, out shootHit, range, shootableMask))
-        {
-            ZombieHealth zombieHealth = shootHit.collider.GetComponent<ZombieHealth>();
-            if(zombieHealth != null)
+            if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
             {
-              //  zombieHealth.TakeDamage(damagePerShot, shootHit.point);
+                ZombieHealth zombieHealth = shootHit.collider.GetComponent<ZombieHealth>();
+                if (zombieHealth != null)
+                {
+                    //  zombieHealth.TakeDamage(damagePerShot, shootHit.point);
+                }
+                gunLine.SetPosition(1, shootHit.point);
             }
-            gunLine.SetPosition(1, shootHit.point);
-        }
-        else
-        {
-            gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            else
+            {
+                gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            }
         }
     }
-}
+
