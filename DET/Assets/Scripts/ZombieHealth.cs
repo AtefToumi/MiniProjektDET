@@ -53,7 +53,7 @@ public class ZombieHealth : MonoBehaviour
         isDead = true;
         capsuleCollider.isTrigger = true;
         anim.SetTrigger("Dead");
-       // Destroy(this.gameObject);
+       // Destroy(this.gameObject , 2f);
     }
 
     public void StartSinking()
