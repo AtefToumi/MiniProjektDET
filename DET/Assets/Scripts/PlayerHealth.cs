@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     Animator anim;
     PlayerMovement playerMovement;
-    bool isDead;
+    public bool playerDead;
     bool damaged;
 
     void Awake() 
@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
         currentHealth -= amount;
         healthSlider.value = currentHealth;
-        if(currentHealth <= 0 && !isDead)
+        if(currentHealth <= 0 && !playerDead)
         {
             Death();
         }
@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
-        isDead = true;
+        playerDead = true;
         anim.SetTrigger("PlayerDead");
 
         playerMovement.enabled = false;
