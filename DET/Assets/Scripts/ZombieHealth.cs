@@ -8,7 +8,7 @@ public class ZombieHealth : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
-    public float sinkSpeed = 2.5f;
+    public float sinkSpeed = 0.000001f;
     public int scoreValue = 10;
 
     Animator anim;
@@ -29,7 +29,7 @@ public class ZombieHealth : MonoBehaviour
     {
         if(isSinking)
         {
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime / 5);
         }
        
     }
@@ -50,10 +50,11 @@ public class ZombieHealth : MonoBehaviour
 
     void Death()
     {
+        StartSinking();
         isDead = true;
         capsuleCollider.isTrigger = true;
         anim.SetTrigger("Dead");
-       // Destroy(this.gameObject , 2f);
+        Destroy(this.gameObject , 10f);
     }
 
     public void StartSinking()
@@ -61,6 +62,7 @@ public class ZombieHealth : MonoBehaviour
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 10f);
+        ScoreManager.score += scoreValue;
     }
 }
