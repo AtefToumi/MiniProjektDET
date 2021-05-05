@@ -34,7 +34,7 @@ public class ZombieHealth : MonoBehaviour
        
     }
 
-    public void TakeDamage(int amount )//, Vector3 hitPoint)
+    public void TakeDamage(int amount , Vector3 hitPoint)
     {
         if(isDead)
         return;

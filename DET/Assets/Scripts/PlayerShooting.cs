@@ -20,8 +20,8 @@ public class PlayerShooting : MonoBehaviour
     void Awake()
     {
         shootableMask = LayerMask.GetMask("Shootable");
-        gunLine = GetComponent<LineRenderer>();
-        gunLight = GetComponent<Light>();
+        gunLine = GetComponentInChildren<LineRenderer>();
+        gunLight = GetComponentInChildren<Light>();
         playerHealth = GetComponent<PlayerHealth>();
     }
 
