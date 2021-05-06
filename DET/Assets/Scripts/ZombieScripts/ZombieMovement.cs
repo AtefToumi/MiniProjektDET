@@ -8,25 +8,27 @@ public class ZombieMovement : MonoBehaviour
     ZombieHealth zombieHealth;
 
    NavMeshAgent nav;
+   ZombieAttack zombieAttack;
 
    void Awake() {
        player = GameObject.FindGameObjectWithTag("Player").transform;
        nav = GetComponent<NavMeshAgent>();
        zombieHealth = GetComponent<ZombieHealth>();
+       zombieAttack = GetComponent<ZombieAttack>();
    }
 
     // Update is called once per frame
     void Update()
     {
-        if(!zombieHealth.isDead)
+        if(!zombieHealth.isDead && !zombieAttack.playerInRange)
         {
             nav.SetDestination(player.position);
         }
-        else
+        
+       else
         {
-            {
-                nav.enabled = false;
-            }
+            nav.enabled = false;
         }
+        
     }
 }
