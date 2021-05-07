@@ -17,6 +17,7 @@ public class GameOverManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+ 
 
     [System.Obsolete]
     void Update()
