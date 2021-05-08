@@ -17,14 +17,13 @@ public class ShootPointofGun : MonoBehaviour
     float effectsDisplayTime = 0.2f;
     Ray shootRay;
 
-    private AudioSource shootingAudio;
-    
+  
     
 
      void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        shootingAudio = GetComponent<AudioSource>();
+     
         playerHealth = player.GetComponent<PlayerHealth>();
         gunLight = GetComponent<Light>();
         gunLine = GetComponent<LineRenderer>();
@@ -65,11 +64,10 @@ public class ShootPointofGun : MonoBehaviour
         shootRay.direction = transform.forward;
        
             muzzelFlash.Play();
-            shootingAudio.Play();
-       
-            
+            // play shootingSound 
+            FindObjectOfType<AudioManager>().play("shootingSound");
 
-            RaycastHit hitInfo;
+        RaycastHit hitInfo;
             bool ishitted = Physics.Raycast(transform.position, transform.forward, out hitInfo, range);
 
             if (ishitted)

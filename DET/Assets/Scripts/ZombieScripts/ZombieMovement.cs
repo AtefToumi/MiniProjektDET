@@ -27,10 +27,12 @@ public class ZombieMovement : MonoBehaviour
         
         if (!zombieHealth.isDead )//&& !zombieAttack.playerInRange)
         {
-            zombiescreaming.Play();
+              zombiescreaming.Play();
+           // FindObjectOfType<AudioManager>().play("zombieScreaming");
             nav.SetDestination(player.position);
-             
-         
+           
+
+
         }
         
       else

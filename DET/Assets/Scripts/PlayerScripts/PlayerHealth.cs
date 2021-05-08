@@ -17,11 +17,12 @@ public class PlayerHealth : MonoBehaviour
     public bool playerDead;
     bool damaged;
 
+
     void Awake() 
     {
        anim = GetComponent<Animator>();
        playerMovement = GetComponent<PlayerMovement>();
-       currentHealth = startingHealth; 
+       currentHealth = startingHealth;
     }
 
     void Update() 
@@ -29,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
         if(damaged)
         {
             damageImage.color = flashColor;
+            FindObjectOfType<AudioManager>().play("playerDamage");
+       
         }
         else
         {

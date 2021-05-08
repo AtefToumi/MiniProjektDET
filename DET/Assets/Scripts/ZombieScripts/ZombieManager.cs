@@ -25,6 +25,7 @@ public class ZombieManager : MonoBehaviour
                 xPos = Random.Range(-13, 13);
                 zPos = Random.Range(-14, 9);
                 Instantiate(zombie, new Vector3(xPos, 0 , zPos), Quaternion.identity);
+             
                 yield return new WaitForSeconds(2f);
                 zombieCount += 1;
             }

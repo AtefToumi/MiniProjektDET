@@ -17,12 +17,15 @@ public class ZombieHealth : MonoBehaviour
     public bool isDead;
     bool isSinking;
 
+ 
+
     void Awake()
     {
         anim = GetComponent<Animator>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
+       
     }
 
     void Update()
@@ -38,6 +41,7 @@ public class ZombieHealth : MonoBehaviour
     {
         if(isDead)
         return;
+       // FindObjectOfType<AudioManager>().play("zombieDamage");
         currentHealth -= amount;
         healthSlider.value = currentHealth;
         // hitParticles.transform.position = hitPoint;
