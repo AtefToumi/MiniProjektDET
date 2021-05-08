@@ -4,98 +4,83 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-    private float playerSpeed = 3.0f;
-    private float jumpHeight = 1.0f;
-    private float gravityValue = -9.81f;
-    private Animator anim;
+    Rigidbody rigidBody;
 
-    private Camera mainCamera;
+    public float speed = 0.78f;
+    Vector3 lookPos;
+    Animator anim;
+    Transform cam;
+    Vector3 camForward;
+    Vector3 move;
+    Vector3 moveInput;
+    
+    float forwardAmount;
+    float turnAmount;
+    
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        controller = GetComponent<CharacterController>();
-        mainCamera = FindObjectOfType<Camera>();
+        rigidBody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-    }
-
-    void FixedUpdate() 
-    {
-        if(Input.GetKey(KeyCode.W) )
-        {
-            anim.SetBool("IsRunning",true);
-        }
-        else
-        {
-            anim.SetBool("IsRunning", false);
-        }
-
-        if(Input.GetKey(KeyCode.A) )
-        {
-            anim.SetBool("Left",true);
-        }
-        else
-        {
-            anim.SetBool("Left", false);
-        }
-
-        if(Input.GetKey(KeyCode.S) )
-        {
-            anim.SetBool("Back",true);
-        }
-        else
-        {
-            anim.SetBool("Back", false);
-        }
-
-        if(Input.GetKey(KeyCode.D) )
-        {
-            anim.SetBool("Right",true);
-        }
-        else
-        {
-            anim.SetBool("Right", false);
-        }
+        cam = Camera.main.transform;
     }
 
     void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, 100))
         {
-            playerVelocity.y = 0f;
+            lookPos = hit.point;
         }
+        Vector3 lookDir = lookPos - transform.position;
+        lookDir.y =0;
+        transform.LookAt(transform.position + lookDir, Vector3.up);
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        if (move != Vector3.zero)
+        if(cam != null)
         {
-            gameObject.transform.forward = move;
+            camForward = Vector3.Scale(cam.up, new Vector3(1,0,1)).normalized;
+            move = v * camForward + h * cam.right;
         }
-        // Changes the height position of the player..
-        if (Input.GetKeyDown(KeyCode.Space) && groundedPlayer)
+        else
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            move = v * Vector3.forward + h * Vector3.right;
         }
-        
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-
-        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        float rayLength;
-
-        if(groundPlane.Raycast(cameraRay, out rayLength))
+        if(move.magnitude > 1)
         {
-            Vector3 pointToLookAt = cameraRay.GetPoint(rayLength);
-            transform.LookAt(new Vector3(pointToLookAt.x, transform.position.y, pointToLookAt.z));
+            move.Normalize();
         }
+        Move(move);
 
+        Vector3 movement = new Vector3(h, 0, v);
+
+        rigidBody.AddForce(movement *speed /  Time.deltaTime );
+    }
+    
+
+    void Move(Vector3 move)
+    {
+        if(move.magnitude > 1)
+        {
+            move.Normalize();
+        }
+        this.moveInput = move;
+        ConvertMoveInput();
+        UpdateAnimator();
+    }
+    void ConvertMoveInput()
+    {
+        Vector3 localMove = transform.InverseTransformDirection(moveInput);
+        turnAmount = localMove.x;
+        forwardAmount = localMove.z;
+    }
+    void UpdateAnimator()
+    {
+        anim.SetFloat("Forward", forwardAmount, 0.1f, Time.deltaTime);
+        anim.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
     }
 }
