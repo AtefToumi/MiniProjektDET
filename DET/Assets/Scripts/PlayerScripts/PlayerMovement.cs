@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rigidBody;
 
-    public float speed = 0.78f;
+    public float speed = 0.5f;
     Vector3 lookPos;
     Animator anim;
     Transform cam;
@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 lookDir = lookPos - transform.position;
         lookDir.y =0;
         transform.LookAt(transform.position + lookDir, Vector3.up);
+        
+    }
+    void FixedUpdate()
+    {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
