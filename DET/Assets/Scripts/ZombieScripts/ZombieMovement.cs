@@ -6,7 +6,7 @@ public class ZombieMovement : MonoBehaviour
 {
      Transform player;
     ZombieHealth zombieHealth;
-    
+    private AudioSource zombiescreaming;
 
    NavMeshAgent nav;
    ZombieAttack zombieAttack;
@@ -16,20 +16,28 @@ public class ZombieMovement : MonoBehaviour
        nav = GetComponent<NavMeshAgent>();
        zombieHealth = GetComponent<ZombieHealth>();
        zombieAttack = GetComponent<ZombieAttack>();
+        zombiescreaming = GetComponent<AudioSource>();
+       
    }
+  
 
     // Update is called once per frame
     void Update()
     {
-        if(!zombieHealth.isDead )//&& !zombieAttack.playerInRange)
+        
+        if (!zombieHealth.isDead )//&& !zombieAttack.playerInRange)
         {
-              nav.SetDestination(player.position);
+            zombiescreaming.Play();
+            nav.SetDestination(player.position);
+             
          
         }
         
       else
         {
+      
             nav.enabled = false;
+           
         } 
         
     } 
