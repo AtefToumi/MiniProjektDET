@@ -14313,6 +14313,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312370473622837933, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312370473622837933, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: BloodSplash
+      value: 
+      objectReference: {fileID: 4279336868091913885, guid: 947f250438ffb4d9c98034ff1e3e4ef4, type: 3}
+    - target: {fileID: 7312370474882556381, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: Zombiee
+      value: 
+      objectReference: {fileID: 7590865116522369613, guid: fcbc8c6d16ceb41459641fc530440562, type: 3}
+    - target: {fileID: 7312370474882556381, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: BloodSplash
+      value: 
+      objectReference: {fileID: 7774329660137670522, guid: 947f250438ffb4d9c98034ff1e3e4ef4, type: 3}
     - target: {fileID: 7312370474882556382, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
       propertyPath: m_Enabled
       value: 0

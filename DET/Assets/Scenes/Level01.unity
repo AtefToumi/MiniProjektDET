@@ -2005,6 +2005,7 @@ MonoBehaviour:
   timeBetweenBullets: 0.15
   range: 100
   muzzelFlash: {fileID: 1589111445}
+  BloodSplash: {fileID: 7774329660137670522, guid: 947f250438ffb4d9c98034ff1e3e4ef4, type: 3}
 --- !u!82 &307014782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8056,6 +8057,7 @@ MonoBehaviour:
   timeBetweenBullets: 0.15
   range: 100
   muzzelFlash: {fileID: 1589111445}
+  BloodSplash: {fileID: 0}
 --- !u!1001 &1576257082
 PrefabInstance:
   m_ObjectHideFlags: 0

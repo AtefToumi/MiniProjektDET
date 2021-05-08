@@ -17,7 +17,8 @@ public class ShootPointofGun : MonoBehaviour
     float effectsDisplayTime = 0.2f;
     Ray shootRay;
 
-  
+    public GameObject BloodSplash;
+   // public GameObject ZombieRig;
     
 
      void Start()
@@ -72,13 +73,17 @@ public class ShootPointofGun : MonoBehaviour
 
             if (ishitted)
             {
-                
+                    if (hitInfo.collider.tag == "zombie")
+                    {
+                        Instantiate(BloodSplash, hitInfo.point, Quaternion.identity);
+                    }
                 Debug.Log(hitInfo.collider.name);
             
                 ZombieHealth zombiehealth = hitInfo.transform.GetComponent<ZombieHealth>();
                 if ( zombiehealth != null)
                 {
                     zombiehealth.TakeDamage(damage, hitInfo.point);
+                   
                 }
                 gunLine.SetPosition (1, hitInfo.point);
                 Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
