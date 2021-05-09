@@ -6080,7 +6080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3017a2f37706d5446a5870b62b112fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 150
+  Score: 10
 --- !u!95 &1082181066
 Animator:
   serializedVersion: 3
