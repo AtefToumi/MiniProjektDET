@@ -5,13 +5,13 @@ using UnityEngine;
 public class Cubemove : MonoBehaviour
 {
     Animator anim;
-    public GameObject player;
-    Transform transform;
+   // public GameObject player;
+   // Transform transform;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        player.transform.position = GetComponent<Transform>().position; 
+      //  player.transform.position = GetComponent<Transform>().position; 
         
     }
     private void OnCollisionEnter(Collision other)
@@ -20,8 +20,10 @@ public class Cubemove : MonoBehaviour
         {
             Debug.Log("collision detected");
             anim.SetBool("move", true);
+            other.collider.transform.SetParent(transform);
+
             // player.transform.parent = other.gameObject.transform;
-            this.transform.position = player.transform.position;
+           // this.transform.position = player.transform.position;
 
 
            
