@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class TimerCountdown : MonoBehaviour
 {
     Text text;
-    public int minutesLeft = 5;
+    public int minutesLeft;
     float timeLeft;
     public bool takingAway = false;
+    
 
 
     void Start()
@@ -19,7 +21,8 @@ public class TimerCountdown : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        
         if(takingAway == false && timeLeft > 0)
         {
             StartCoroutine(TimerTake());
