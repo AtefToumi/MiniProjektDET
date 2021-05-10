@@ -5,7 +5,8 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     Animator animator;
-    public int Score = 100;
+    public int scoreOpenDoor;
+    
  
     void Start()
     {
@@ -14,7 +15,7 @@ public class DoorScript : MonoBehaviour
 
     void Update()
     {
-        if(ScoreManager.score >= Score)
+        if(ScoreManager.score >= scoreOpenDoor)
         {
             animator.SetTrigger("DoorOpen");
         }

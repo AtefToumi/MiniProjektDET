@@ -25,7 +25,6 @@ public class ZombieHealth : MonoBehaviour
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
-       
     }
 
     void Update()
@@ -66,7 +65,7 @@ public class ZombieHealth : MonoBehaviour
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
-        Destroy(gameObject, 5f);
         ScoreManager.score += scoreValue;
+        Destroy(this.gameObject , 5f);
     }
 }

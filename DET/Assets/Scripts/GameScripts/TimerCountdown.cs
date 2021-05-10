@@ -11,13 +11,17 @@ public class TimerCountdown : MonoBehaviour
     public int minutesLeft;
     float timeLeft;
     public bool takingAway = false;
+    GameObject player;
+    PlayerHealth playerHealth;
     
 
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         text = GetComponent<Text>();
-        timeLeft = minutesLeft * 60;
+        timeLeft = minutesLeft * 10;
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -26,6 +30,10 @@ public class TimerCountdown : MonoBehaviour
         if(takingAway == false && timeLeft > 0)
         {
             StartCoroutine(TimerTake());
+        }
+        if(timeLeft == 0)
+        {
+            playerHealth.currentHealth = 0;
         }
     }
 

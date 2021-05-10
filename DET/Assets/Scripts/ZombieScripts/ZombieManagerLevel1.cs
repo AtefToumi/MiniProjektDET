@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieManager : MonoBehaviour
+public class ZombieManagerLevel1 : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public GameObject zombie;
@@ -12,32 +12,24 @@ public class ZombieManager : MonoBehaviour
     public int zPos;
     public int zombieCount;
 
+
      IEnumerator ZombieSpawn()
     {
         if(playerHealth.currentHealth <= 0)
         {
             yield break;
         }
-        while(zombieCount < 30 )
+        while(zombieCount < 15 )
         {
-            if(ScoreManager.score < 100)
+            if(ScoreManager.score <= 150)
             {
-                xPos = Random.Range(-13, 13);
-                zPos = Random.Range(-14, 9);
+                xPos = Random.Range(-7, 4);
+                zPos = Random.Range(-10, 22);
                 Instantiate(zombie, new Vector3(xPos, 0 , zPos), Quaternion.identity);
              
                 yield return new WaitForSeconds(2f);
                 zombieCount += 1;
             }
-            else
-            {
-                xPos = Random.Range(-44, 16);
-                zPos = Random.Range(-6, 6);
-                Instantiate(zombie, new Vector3(xPos, 0 , zPos), Quaternion.identity);
-                yield return new WaitForSeconds(2f);
-                zombieCount += 1;
-            }
-            
         }
     }
 

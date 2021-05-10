@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
 
     Text text;
     Animator anim;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -21,10 +22,6 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         text.text = "Score: " + score;
-        if(score >= 100)
-        {
-            
-        }
     }
     
 }
