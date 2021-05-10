@@ -8470,7 +8470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f560c940b65997e49a92a015bd697be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutesLeft: 2
+  minutesLeft: 3
   takingAway: 0
 --- !u!114 &1162880226
 MonoBehaviour:
