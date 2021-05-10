@@ -6,6 +6,9 @@ public class Cubemove : MonoBehaviour
 {
     Animator anim;
     public GameObject WinnweUi;
+    public GameObject timerUi ;
+    public GameObject HealthUi;
+    public GameObject scoreUi;
 
     private void Start()
     {
@@ -26,6 +29,10 @@ public class Cubemove : MonoBehaviour
     public void win()
     {
         WinnweUi.SetActive(true);
+        scoreUi.SetActive(false);
+        timerUi.SetActive(false);
+        HealthUi.SetActive(false);
+
 
     }
 }
