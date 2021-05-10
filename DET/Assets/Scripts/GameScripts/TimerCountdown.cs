@@ -20,7 +20,7 @@ public class TimerCountdown : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         text = GetComponent<Text>();
-        timeLeft = minutesLeft * 10;
+        timeLeft = minutesLeft * 60;
         playerHealth = player.GetComponent<PlayerHealth>();
     }
 
