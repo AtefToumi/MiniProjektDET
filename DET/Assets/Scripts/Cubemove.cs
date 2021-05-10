@@ -5,13 +5,11 @@ using UnityEngine;
 public class Cubemove : MonoBehaviour
 {
     Animator anim;
-   // public GameObject player;
-   // Transform transform;
+    public GameObject WinnweUi;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-      //  player.transform.position = GetComponent<Transform>().position; 
         
     }
     private void OnCollisionEnter(Collision other)
@@ -22,12 +20,12 @@ public class Cubemove : MonoBehaviour
             anim.SetBool("move", true);
             other.collider.transform.SetParent(transform);
 
-            // player.transform.parent = other.gameObject.transform;
-           // this.transform.position = player.transform.position;
-
-
-           
-
         }
+    }
+
+    public void win()
+    {
+        WinnweUi.SetActive(true);
+
     }
 }
