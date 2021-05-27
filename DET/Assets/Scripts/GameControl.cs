@@ -9,15 +9,13 @@ public class GameControl : MonoBehaviour
     private string selectedCharacterDataName = "selectedCharacter";
 
     public Transform PlayerStartPosition;
-    private GameObject player;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         index = PlayerPrefs.GetInt(selectedCharacterDataName, 0);
         player = Instantiate(characterList[index], PlayerStartPosition.position, characterList[index].transform.rotation);
-
-        
     }
 
    

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class characterSelektion : MonoBehaviour
+public class CharacterSelection : MonoBehaviour
 {
     private GameObject[] characterList;
     private int index;

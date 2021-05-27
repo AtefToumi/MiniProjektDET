@@ -15,10 +15,9 @@ public class ZombieManagerLevel1 : MonoBehaviour
 
      IEnumerator ZombieSpawn()
     {
-        if(playerHealth.currentHealth <= 0)
-        {
-            yield break;
-        }
+        yield return new WaitForSeconds(2f);
+
+        
         while(zombieCount < 15 )
         {
             if(ScoreManager.score <= 150)
