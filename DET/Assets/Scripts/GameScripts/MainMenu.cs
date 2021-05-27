@@ -13,6 +13,6 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("SelectScene");
     }
 }
