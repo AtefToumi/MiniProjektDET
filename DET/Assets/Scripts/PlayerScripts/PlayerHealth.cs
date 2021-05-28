@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     PlayerMovement playerMovement;
     public bool playerDead;
     bool damaged;
+    
 
 
     void Awake() 
