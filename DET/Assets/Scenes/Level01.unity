@@ -1435,6 +1435,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1075944263}
+    - target: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 188500180}
     - target: {fileID: 7618872198138064520, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5557,8 +5565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 7843004649967101345, guid: 2c0d03c45d14844dda161979ef99f67e, type: 3}
-  damageImage: {fileID: 2585214883635633568, guid: fcb01c232231d49d5986b9b724070250, type: 3}
+  healthSlider: {fileID: 188500180}
+  damageImage: {fileID: 1075944263}
   flashSpeed: 5
   flashColor: {r: 1, g: 0, b: 0, a: 0.1}
   playerDead: 0
@@ -5609,7 +5617,7 @@ Animator:
   m_GameObject: {fileID: 1124495788}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d8410b209c66c642b3388bef4f333a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 72b119ce1f68a460ab1d3211684ae223, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
