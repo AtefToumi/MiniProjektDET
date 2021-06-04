@@ -6,6 +6,7 @@ TagManager:
   tags:
   - zombie
   - PlayerGirl
+  - AudioManager
   layers:
   - Default
   - TransparentFX

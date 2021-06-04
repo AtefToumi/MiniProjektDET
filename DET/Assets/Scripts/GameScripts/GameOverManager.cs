@@ -19,7 +19,7 @@ public class GameOverManager : MonoBehaviour
     }
  
 
-  /*  [System.Obsolete]
+   /* [System.Obsolete]
     void Update()
     {
         if(playerHealth.currentHealth <= 0 )
@@ -31,5 +31,5 @@ public class GameOverManager : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevel);
             }
         }
-    }*/
+    } */
 }

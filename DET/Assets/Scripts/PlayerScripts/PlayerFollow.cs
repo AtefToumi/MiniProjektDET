@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerFollow : MonoBehaviour
 {
 
-    public Transform target;
+    // public Transform target;
+    Transform target;
 
     public float smoothSpeed = 0.5f;
     public Vector3 offset;
@@ -14,6 +15,7 @@ public class PlayerFollow : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        target = player.transform;
     }
     
     void LateUpdate()

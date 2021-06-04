@@ -12,20 +12,23 @@ public class GameControl : MonoBehaviour
     public GameObject player;
     public GameObject playerTwo;
 
+
     // Start is called before the first frame update
     void Start()
     {
         
         index = PlayerPrefs.GetInt(selectedCharacterDataName, 0);
-        
-        if(index == 1)
-        {
-            player.SetActive(true);
-        }
-        else
-        {
-            playerTwo.SetActive(true);
-        }
+
+            if(index == 1)
+            {
+                player.SetActive(true);
+            }
+            else
+            {
+                playerTwo.SetActive(true);
+            }  
+
+       // characterList[index].SetActive(true);
       
        
         
