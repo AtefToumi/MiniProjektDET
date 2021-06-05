@@ -8,7 +8,7 @@ public class GameControl : MonoBehaviour
     private int index;
     private string selectedCharacterDataName = "selectedCharacter";
 
-    public Transform PlayerStartPosition;
+  //  public Transform PlayerStartPosition;
     public GameObject player;
     public GameObject playerTwo;
 
