@@ -8,6 +8,6 @@ public class completeLevel01 : MonoBehaviour
      NEXTLEVELUI nextlevel ;
     public void loadNextLevel()
     {
-       SceneManager.LoadScene(2);
+       SceneManager.LoadScene(3);
     }
 }
