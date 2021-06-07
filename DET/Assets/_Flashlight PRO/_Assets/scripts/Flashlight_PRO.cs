@@ -37,7 +37,7 @@ public class Flashlight_PRO : MonoBehaviour
 	
 	void Update()
 	{
-		if(Input.GetKeyDown("T"))
+		if(Input.GetButtonDown("T"))
 		{
 			Switch();
 		}
