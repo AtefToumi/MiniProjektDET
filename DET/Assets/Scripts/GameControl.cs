@@ -13,9 +13,11 @@ public class GameControl : MonoBehaviour
     public GameObject playerTwo;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         
         index = PlayerPrefs.GetInt(selectedCharacterDataName, 0);
 
@@ -28,12 +30,7 @@ public class GameControl : MonoBehaviour
                 playerTwo.SetActive(true);
             }  
 
-       // characterList[index].SetActive(true);
-      
-       
-        
-        //player = Instantiate(characterList[index], PlayerStartPosition.position, characterList[index].transform.rotation);
+    // characterList[index].SetActive(true);      
+    //player = Instantiate(characterList[index], PlayerStartPosition.position, characterList[index].transform.rotation);
     }
-
-   
 }
