@@ -8,6 +8,7 @@ TagManager:
   - PlayerGirl
   - AudioManager
   - Ground
+  - flash
   layers:
   - Default
   - TransparentFX

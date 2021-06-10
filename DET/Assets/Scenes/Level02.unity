@@ -4155,7 +4155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48c46272d67d254bac42405652c57eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 627204813}
+  playerHealth: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
   zombie: {fileID: 8761312895282357824, guid: 9345345bae6530a43ac45aff834731a0, type: 3}
   spawnTime: 3
   spawnPoints:
@@ -11738,6 +11738,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.054
       objectReference: {fileID: 0}
+    - target: {fileID: 3734917800799384946, guid: 0370b525d96954f28afa85525eb68a71, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3734917800799384947, guid: 0370b525d96954f28afa85525eb68a71, type: 3}
       propertyPath: looping
       value: 0
@@ -16173,6 +16177,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312370473610159924, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7312370473622837933, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
       propertyPath: m_Enabled
       value: 0

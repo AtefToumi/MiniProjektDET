@@ -2083,10 +2083,10 @@ GameObject:
   - component: {fileID: 7590865115208217154}
   - component: {fileID: 7590865115208217153}
   - component: {fileID: 7590865115208217152}
-  - component: {fileID: 7590865115208217167}
   - component: {fileID: 7590865115208217166}
   - component: {fileID: 7590865115208217162}
   - component: {fileID: -7541745627560425897}
+  - component: {fileID: 8037618501098331704}
   m_Layer: 0
   m_Name: ZombieRig
   m_TagString: zombie
@@ -2200,18 +2200,6 @@ NavMeshAgent:
   m_BaseOffset: -0.6
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7590865115208217167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590865116522369613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4afda25f0ead7514eb7e2c5f9ccdf136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7590865115208217166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2341,6 +2329,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8037618501098331704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590865116522369613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afda25f0ead7514eb7e2c5f9ccdf136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7590865116522369615
 GameObject:
   m_ObjectHideFlags: 0

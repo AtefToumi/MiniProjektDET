@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0040381933, g: 0.00022057007, b: 0.000000054532922, a: 1}
+  m_IndirectSpecularColor: {r: 0.1943574, g: 0.1685243, b: 0.12352266, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2981,7 +2981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
-  zombie: {fileID: 8761312895282357824, guid: 9345345bae6530a43ac45aff834731a0, type: 3}
+  zombie: {fileID: 5519653918412471870, guid: 72c85ca67bb214700b1a1d06622b6a37, type: 3}
   spawnTime: 3
   spawnPoints:
   - {fileID: 1089927242}
@@ -3547,7 +3547,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3604,13 +3604,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: -0.63426816, y: -0.432572, z: -0.5902055, w: 0.24948506}
+  m_LocalRotation: {x: -0.6649918, y: -0.68923956, z: -0.24578287, w: -0.14941739}
   m_LocalPosition: {x: 7.317, y: 10.318, z: -19.799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 235.801, y: -791.448, z: 333.107}
+  m_LocalEulerAnglesHint: {x: 188.053, y: -752.559, z: 270.30402}
 --- !u!1001 &705924260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4622,14 +4622,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0495224, y: 1.46, z: -2.203}
+  m_LocalRotation: {x: 0.12249989, y: -0, z: -0, w: 0.99246854}
+  m_LocalPosition: {x: -2.0495224, y: 1.7, z: -3.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1442413484}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.073, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5459,6 +5459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flashlight
       objectReference: {fileID: 0}
+    - target: {fileID: 130382, guid: 47af58fd905aee649a315f604914d38e, type: 3}
+      propertyPath: m_TagString
+      value: flash
+      objectReference: {fileID: 0}
     - target: {fileID: 416254, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5477,15 +5481,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 416254, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06565308
+      value: -0.018
       objectReference: {fileID: 0}
     - target: {fileID: 416254, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08375259
+      value: 0.084
       objectReference: {fileID: 0}
     - target: {fileID: 416254, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3612504
+      value: 0.361
       objectReference: {fileID: 0}
     - target: {fileID: 416254, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5521,7 +5525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10869704, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_Intensity
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 10869704, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_SpotAngle
@@ -7491,6 +7495,10 @@ PrefabInstance:
     - target: {fileID: 130382, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_Name
       value: Flashlight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 130382, guid: 47af58fd905aee649a315f604914d38e, type: 3}
+      propertyPath: m_TagString
+      value: flash
       objectReference: {fileID: 0}
     - target: {fileID: 416254, guid: 47af58fd905aee649a315f604914d38e, type: 3}
       propertyPath: m_RootOrder
@@ -10361,6 +10369,10 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3734917801537174242, guid: 0370b525d96954f28afa85525eb68a71, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 72b119ce1f68a460ab1d3211684ae223, type: 2}
     - target: {fileID: 3734917801537174269, guid: 0370b525d96954f28afa85525eb68a71, type: 3}
       propertyPath: m_Enabled
       value: 1
