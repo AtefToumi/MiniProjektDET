@@ -13,6 +13,8 @@ public class ZombieMovementMitFlashlight : MonoBehaviour
 
     Flashlight_PRO flashlightScript;
     GameObject flashlight;
+
+    Animator anim;
     
     void Awake()
     {
@@ -23,7 +25,7 @@ public class ZombieMovementMitFlashlight : MonoBehaviour
         zombiescreaming = GetComponent<AudioSource>();
         flashlight = GameObject.FindGameObjectWithTag("flash");
         flashlightScript = flashlight.GetComponent<Flashlight_PRO>();
-
+        anim = GetComponent<Animator>();
     }
 
 
@@ -39,13 +41,14 @@ public class ZombieMovementMitFlashlight : MonoBehaviour
 
         if (!zombieHealth.isDead && flashlightScript.is_enabled )
         {
+           anim.SetBool("lightON",true);
             nav.enabled = true;
             nav.SetDestination(player.position);
         }
 
         else
         {
-     
+            anim.SetBool("lightON",false);
             nav.enabled = false;
 
         }
