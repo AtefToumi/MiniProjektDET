@@ -11,14 +11,14 @@ public class ZombieManagerLevel1 : MonoBehaviour
     public int xPos;
     public int zPos;
     public int zombieCount;
+    public int zombieCountLimit = 15 ;
 
-
-     IEnumerator ZombieSpawn()
+    IEnumerator ZombieSpawn()
     {
         yield return new WaitForSeconds(2f);
 
         
-        while(zombieCount < 15 )
+        while(zombieCount < zombieCountLimit )
         {
             if(ScoreManager.score <= 150)
             {

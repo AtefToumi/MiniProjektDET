@@ -41,7 +41,7 @@ public class ZombieMovementMitFlashlight : MonoBehaviour
 
         if (!zombieHealth.isDead && flashlightScript.is_enabled )
         {
-           anim.SetBool("lightON",true);
+            anim.SetBool("lightON",true);
             nav.enabled = true;
             nav.SetDestination(player.position);
         }
