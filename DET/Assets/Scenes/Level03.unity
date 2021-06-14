@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1943574, g: 0.1685243, b: 0.12352266, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040920964, g: 0.00022392407, b: 0.000000057434036, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.116901405, g: 0, b: 0.2830189, a: 0.007843138}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.59607846}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2083,7 +2083,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.06458598, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &404994561
 MonoBehaviour:
@@ -2988,6 +2988,7 @@ MonoBehaviour:
   xPos: 0
   zPos: 0
   zombieCount: 0
+  zombieCountLimit: 15
 --- !u!4 &580489881
 Transform:
   m_ObjectHideFlags: 0
@@ -3209,6 +3210,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7baabdbc078cb4098d5880fc72c0f3, type: 3}
+--- !u!1 &614409863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614409865}
+  - component: {fileID: 614409864}
+  m_Layer: 0
+  m_Name: ZombieGirlManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &614409864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614409863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e917d1b0621b544dbb1fed8feba3cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+  zombie: {fileID: 2311039557170262894, guid: d882739600a084be78a3b7833df183fd, type: 3}
+  spawnTime: 3
+  spawnPoints:
+  - {fileID: 1089927242}
+  xPos: 0
+  zPos: 0
+  zombieCount: 0
+  zombieCountLimit: 7
+--- !u!4 &614409865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614409863}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.6388196, y: 0, z: -1.2168837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &621481274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,13 +3657,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: -0.6649918, y: -0.68923956, z: -0.24578287, w: -0.14941739}
+  m_LocalRotation: {x: -0.67990136, y: -0.5897245, z: -0.43322638, w: 0.04768872}
   m_LocalPosition: {x: 7.317, y: 10.318, z: -19.799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 188.053, y: -752.559, z: 270.30402}
+  m_LocalEulerAnglesHint: {x: 215.157, y: -760.674, z: 291.51898}
 --- !u!1001 &705924260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9022,7 +9075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1867229541
 PrefabInstance:
@@ -10385,6 +10438,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 188500180}
+    - target: {fileID: 3734917801537174271, guid: 0370b525d96954f28afa85525eb68a71, type: 3}
+      propertyPath: startingHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3773926941784606458, guid: 0370b525d96954f28afa85525eb68a71, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10452,7 +10509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744253495340101482, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8744253495340101482, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10521,7 +10578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8961156346966933308, guid: f8e32f7b0ffa444deb19cfe182d76d3a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8961156346966933308, guid: f8e32f7b0ffa444deb19cfe182d76d3a, type: 3}
       propertyPath: m_LocalPosition.x
