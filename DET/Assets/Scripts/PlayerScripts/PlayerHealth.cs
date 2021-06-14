@@ -16,8 +16,8 @@ public class PlayerHealth : MonoBehaviour
     PlayerMovement playerMovement;
     public bool playerDead;
     bool damaged;
-    
 
+    public GameObject gameOvercanvus;
 
     void Awake() 
     {
@@ -58,6 +58,15 @@ public class PlayerHealth : MonoBehaviour
         anim.SetTrigger("PlayerDead");
 
         playerMovement.enabled = false;
+
+       
+        GameOver();
+    }
+
+    void GameOver()
+    {
+        gameOvercanvus.SetActive(true);
+        Time.timeScale = 0f;
     }
     
 }

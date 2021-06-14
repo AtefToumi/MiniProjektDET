@@ -17,6 +17,11 @@ public class GameOverManager : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+
+    public void TryAgain()
+    {
+
+    }
  
 
    /* [System.Obsolete]
