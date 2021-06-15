@@ -50,7 +50,7 @@ public class PausMenu : MonoBehaviour
         pauseCanvse.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
-        characterList[index].GetComponent<PlayerMovement>().enabled = false;
+       // characterList[index].GetComponent<PlayerMovement>().enabled = false;
         // audioManager.GetComponent<AudioManager>().enabled = false;
 
 
@@ -60,7 +60,7 @@ public class PausMenu : MonoBehaviour
         pauseCanvse.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
-        characterList[index].GetComponent<PlayerMovement>().enabled = true;
+    //    characterList[index].GetComponent<PlayerMovement>().enabled = true;
 
     }
 
