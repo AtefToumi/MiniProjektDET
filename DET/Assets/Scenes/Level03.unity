@@ -8893,7 +8893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
-  zombie: {fileID: 5519653918412471870, guid: 72c85ca67bb214700b1a1d06622b6a37, type: 3}
+  zombie: {fileID: 637505237106545790, guid: 2f9d5519091bc4d4584bd0dac33b355c, type: 3}
   spawnTime: 3
   spawnPoints:
   - {fileID: 1089927242}
@@ -17331,6 +17331,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8744253495048593271, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253495048593271, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45.4628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253495048593271, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 227
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253495048593271, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -81.731384
+      objectReference: {fileID: 0}
     - target: {fileID: 8744253495340101480, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
       propertyPath: m_Name
       value: Pause
@@ -17391,6 +17407,26 @@ PrefabInstance:
       propertyPath: characterList.Array.data[1]
       value: 
       objectReference: {fileID: 1324321515}
+    - target: {fileID: 8744253495658503241, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40.3085
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253495658503241, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 72.845764
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253496756776055, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253496756776055, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744253496885784350, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 603babd7c78b8420c9558c7279a77839, type: 3}
 --- !u!1001 &8961156346611018357
