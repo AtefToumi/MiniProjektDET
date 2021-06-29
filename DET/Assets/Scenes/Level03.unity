@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.004084887, g: 0.00022347488, b: 0.00000005703632, a: 1}
+  m_IndirectSpecularColor: {r: 0.004028784, g: 0.00021998519, b: 0.000000053884094, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1995,7 +1995,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.5989761, y: 1}
+    m_SensorSize: {x: 1.605802, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2578,7 +2578,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.5989761, y: 1}
+    m_SensorSize: {x: 1.605802, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9088,7 +9088,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.5989761, y: 1}
+    m_SensorSize: {x: 1.605802, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9887,13 +9887,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: -0.5564919, y: -0.1083072, z: -0.74061453, w: 0.36066124}
+  m_LocalRotation: {x: -0.5290294, y: 0.07262395, z: -0.11616257, w: 0.8374724}
   m_LocalPosition: {x: 7.317, y: 10.318, z: -19.799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 325.81702, y: -1375.579, z: 210.004}
+  m_LocalEulerAnglesHint: {x: 299.632, y: -690.356, z: 326.706}
 --- !u!1001 &705924260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15058,7 +15058,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.5989761, y: 1}
+    m_SensorSize: {x: 1.605802, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15074,7 +15074,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539659792}
-  m_LocalRotation: {x: 0.5523914, y: -0.8088487, z: 0.19727752, w: -0.041341588}
+  m_LocalRotation: {x: 0.5523914, y: -0.8088487, z: 0.19727752, w: -0.04134157}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16075,7 +16075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bba1fecd7eca54ba3dd977dbe5416c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 7312370475634732909, guid: 96183bc3a8e36a84b82adb70db2f53f7, type: 3}
+  playerHealth: {fileID: 66283754}
   restartDelay: 5
 --- !u!95 &1648460721
 Animator:

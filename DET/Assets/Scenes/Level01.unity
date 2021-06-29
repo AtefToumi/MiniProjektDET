@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4370994, g: 0.48481327, b: 0.5650796, a: 1}
+  m_IndirectSpecularColor: {r: 0.43714267, g: 0.4848696, b: 0.56513816, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: f2a475438bda0f043b745039a44b0c47, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 08f5e753414d31f44a996c968afb65dd, type: 2}
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -313,6 +313,7 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1708,7 +1709,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8200935, y: 1}
+    m_SensorSize: {x: 1.5989761, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2204,7 +2205,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8200935, y: 1}
+    m_SensorSize: {x: 1.5989761, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8489,7 +8490,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8200935, y: 1}
+    m_SensorSize: {x: 1.5989761, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9213,13 +9214,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: -0.36302638, y: 0.5605626, z: -0.6489832, w: -0.3644204}
-  m_LocalPosition: {x: 7.317, y: 10.318, z: -19.799}
+  m_LocalRotation: {x: -0.32074416, y: 0.62853885, z: -0.5833941, w: -0.40213627}
+  m_LocalPosition: {x: -2.78, y: 11.73, z: -0.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 442.83002, y: -689.88, z: 148.073}
+  m_LocalEulerAnglesHint: {x: 97.547, y: -988.2, z: 210.17}
 --- !u!1001 &705924260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13334,7 +13335,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.8200935, y: 1}
+    m_SensorSize: {x: 1.5989761, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
