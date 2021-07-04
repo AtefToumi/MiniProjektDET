@@ -15,16 +15,16 @@ public class Flamethrower : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(1))
-        {
-            flamethrower.Play();
-        }
+    // void Update()
+    // {
+    //     if(Input.GetMouseButtonDown(1))
+    //     {
+    //         flamethrower.Play();
+    //     }
 
-        if(Input.GetMouseButtonUp(1))
-        {
-            flamethrower.Stop();
-        }
-    }
+    //     if(Input.GetMouseButtonUp(1))
+    //     {
+    //         flamethrower.Stop();
+    //     }
+    // }
 }
