@@ -9,7 +9,7 @@ public class ShootPointofGun : MonoBehaviour
     public float range = 100f;
     float timer;
 
-    public ParticleSystem muzzelFlash;
+    public ParticleSystem flash;
     public ParticleSystem hitEffect;
     GameObject player;
     PlayerHealth playerHealth;
@@ -40,6 +40,7 @@ public class ShootPointofGun : MonoBehaviour
         
         if(Input.GetButtonDown("Fire1") && playerHealth.currentHealth > 0 && timer >= timeBetweenBullets )
         {
+            flash.Emit(1);
             Shoot();
         }
         if(timer >= timeBetweenBullets * effectsDisplayTime)
@@ -66,7 +67,7 @@ public class ShootPointofGun : MonoBehaviour
         shootRay.direction = transform.forward;
        
         
-        muzzelFlash.Play();
+        
         // play shootingSound 
         FindObjectOfType<AudioManager>().play("shootingSound");
 
