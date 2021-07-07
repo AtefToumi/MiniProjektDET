@@ -7,7 +7,6 @@ public class PlayerAiming : MonoBehaviour
     RaycastWeapon weapon;
     public float turnSpeed = 5;
     Camera mainCamera;
-    public Rig aimLayer;
     public float aimDuration = 0.3f;
     
     
@@ -27,27 +26,18 @@ public class PlayerAiming : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
     }
 
-    // void LateUpdate() {
-    //     if(Input.GetButtonDown("Fire1")){
-    //         weapon.StartFiring();
-    //     }
-    //     if(weapon.isFiring){
-    //         weapon.UpdateFiring(Time.deltaTime);
-    //     }
-    //     weapon.UpdateBullets(Time.deltaTime);
-    //     if(Input.GetButtonUp("Fire1")){
-    //         weapon.StopFiring();
-    //     }
-    // }
-    void Update() 
-    {
-        // if(Input.GetMouseButton(1))
-        // {
-        //     aimLayer.weight += Time.deltaTime / aimDuration;
-        // } else
-        // {
-        //     aimLayer.weight -= Time.deltaTime / aimDuration;
-        // }
-        aimLayer.weight = 1.0f;
+    void LateUpdate() {
+        if(weapon){
+            if(Input.GetButtonDown("Fire1")){
+                weapon.StartFiring();
+            }
+            if(weapon.isFiring){
+                weapon.UpdateFiring(Time.deltaTime);
+            }
+            weapon.UpdateBullets(Time.deltaTime);
+            if(Input.GetButtonUp("Fire1")){
+                weapon.StopFiring();
+            }
+        }
     }
 }

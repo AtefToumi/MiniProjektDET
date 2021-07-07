@@ -30217,7 +30217,7 @@ MonoBehaviour:
   tracerEffect: {fileID: 3044592256871940457, guid: 4ce07d7089c14754c85499a17d5571cb, type: 3}
   raycastOrigin: {fileID: 3397973312716736584}
   raycastDestination: {fileID: 0}
-  weaponAnimation: {fileID: 7400000, guid: 580f963c8b88f09409444d24ad02fd18, type: 2}
+  weaponName: pistol
 --- !u!1 &9175436059292149326
 GameObject:
   m_ObjectHideFlags: 0
