@@ -27,18 +27,18 @@ public class PlayerAiming : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
     }
 
-    void LateUpdate() {
-        if(Input.GetButtonDown("Fire1")){
-            weapon.StartFiring();
-        }
-        if(weapon.isFiring){
-            weapon.UpdateFiring(Time.deltaTime);
-        }
-        weapon.UpdateBullets(Time.deltaTime);
-        if(Input.GetButtonUp("Fire1")){
-            weapon.StopFiring();
-        }
-    }
+    // void LateUpdate() {
+    //     if(Input.GetButtonDown("Fire1")){
+    //         weapon.StartFiring();
+    //     }
+    //     if(weapon.isFiring){
+    //         weapon.UpdateFiring(Time.deltaTime);
+    //     }
+    //     weapon.UpdateBullets(Time.deltaTime);
+    //     if(Input.GetButtonUp("Fire1")){
+    //         weapon.StopFiring();
+    //     }
+    // }
     void Update() 
     {
         // if(Input.GetMouseButton(1))

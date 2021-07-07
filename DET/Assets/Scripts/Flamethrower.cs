@@ -11,7 +11,7 @@ public class Flamethrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flamethrower.Stop();
+        //flamethrower.Stop();
     }
 
     // Update is called once per frame
