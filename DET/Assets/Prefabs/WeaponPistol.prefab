@@ -30204,10 +30204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c771ff9db7f4e27469e1d3587f94b345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlot: 1
   isFiring: 0
-  fireRate: 5
+  fireRate: 1
   damage: 30
-  bulletSpeed: 20
+  bulletSpeed: 1000
   bulletDrop: 0
   muzzleFlash:
   - {fileID: 2620221698246406753}
