@@ -6885,6 +6885,7 @@ MonoBehaviour:
   flashSpeed: 5
   flashColor: {r: 1, g: 0, b: 0, a: 0.1}
   playerDead: 0
+  gameOvercanvus: {fileID: 0}
 --- !u!114 &3734917801537174268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8276,13 +8277,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
---- !u!1 &3734917800692991409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
-  m_PrefabInstance: {fileID: 3734917800693026571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3734917800692659169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
+  m_PrefabInstance: {fileID: 3734917800693026571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3734917800692991409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
   m_PrefabInstance: {fileID: 3734917800693026571}
   m_PrefabAsset: {fileID: 0}
