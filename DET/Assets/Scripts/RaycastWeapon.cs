@@ -24,6 +24,7 @@ public class RaycastWeapon : MonoBehaviour
     public Transform raycastOrigin;
     public Transform raycastDestination;
     public string weaponName;
+    public WeaponRecoil recoil;
 
     
     
@@ -32,6 +33,13 @@ public class RaycastWeapon : MonoBehaviour
     float accumulatedTime;
     List<Bullet> bullets = new List<Bullet>();
     float maxLifeTime = 3.0f;
+
+    private void Awake() {
+        recoil = GetComponent<WeaponRecoil>();
+    }
+
+
+
     Vector3 GetPosition(Bullet bullet){
         Vector3 gravity = Vector3.down * bulletDrop;
         return (bullet.initialPosition) + (bullet.initialVelocity * bullet.time) + (0.5f * gravity * bullet.time * bullet.time);
@@ -50,6 +58,7 @@ public class RaycastWeapon : MonoBehaviour
     // Start is called before the first frame update
     public void StartFiring(){
         isFiring = true;
+        recoil.Reset();
         accumulatedTime = 0.0f;
         FireBullet();
     }
@@ -121,7 +130,7 @@ public class RaycastWeapon : MonoBehaviour
         var bullet = CreateBullet(raycastOrigin.position, velocity);
         bullets.Add(bullet);
 
-
+        recoil.GenerateRecoil();
 
     }
     public void StopFiring() {
