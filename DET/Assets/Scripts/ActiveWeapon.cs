@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEditor.Animations;
 
 
-
-
-
 public class ActiveWeapon : MonoBehaviour
 {
     public enum WeaponSlot{
@@ -17,6 +14,7 @@ public class ActiveWeapon : MonoBehaviour
     public Transform[] weaponSlots;
     RaycastWeapon[] equipped_weapons = new RaycastWeapon[2];
     public Cinemachine.CinemachineFreeLook playerCamera;
+    public AmmoWidget ammoWidget;
 
     int activeWeaponsIndex;
     public Animator rigController;
@@ -31,6 +29,10 @@ public class ActiveWeapon : MonoBehaviour
         if(existingWeapon){
             Equip(existingWeapon);
         }
+    }
+
+    public RaycastWeapon GetActiveWeapon(){
+        return GetWeapon(activeWeaponsIndex);
     }
 
     RaycastWeapon GetWeapon(int index){
@@ -79,10 +81,12 @@ public class ActiveWeapon : MonoBehaviour
         weapon = newWeapon;
         weapon.raycastDestination = crossHairTarget;
         weapon.recoil.playerCamera = playerCamera;
+        weapon.recoil.rigController = rigController;
         weapon.transform.SetParent(weaponSlots[weaponSlotIndex], false);
         equipped_weapons[weaponSlotIndex] = weapon;  
 
         SetActiveWeapon(newWeapon.weaponSlot);
+        ammoWidget.Refresh(newWeapon.ammoCount);
     }
 
     void ToggleActiveWeapon(){

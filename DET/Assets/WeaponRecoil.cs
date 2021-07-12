@@ -6,6 +6,7 @@ public class WeaponRecoil : MonoBehaviour
 {
     [HideInInspector] public Cinemachine.CinemachineFreeLook playerCamera;
     [HideInInspector] public Cinemachine.CinemachineImpulseSource cameraShake;
+    [HideInInspector] public Animator rigController;
 
     public Vector2[] recoilPattern;
     float horizontalRecoil;
@@ -25,7 +26,7 @@ public class WeaponRecoil : MonoBehaviour
         index = 0;
     }
 
-    public void GenerateRecoil(){
+    public void GenerateRecoil(string weaponName){
         time = duration;
 
         cameraShake.GenerateImpulse(Camera.main.transform.forward);
@@ -34,6 +35,8 @@ public class WeaponRecoil : MonoBehaviour
         verticalRecoil = recoilPattern[index].y;
 
         index = NextIndex(index);
+
+        rigController.Play("weapon_recoil_" + weaponName, 1, 0.0f);
     }
     
     void Update()

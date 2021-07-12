@@ -25,7 +25,10 @@ public class RaycastWeapon : MonoBehaviour
     public Transform raycastDestination;
     public string weaponName;
     public WeaponRecoil recoil;
+    public GameObject magazine;
 
+    public int ammoCount;
+    public int clipSize;
     
     
     Ray ray;
@@ -120,6 +123,11 @@ public class RaycastWeapon : MonoBehaviour
         }
     }   
     public void FireBullet(){
+        if(ammoCount <= 0){
+            return;
+        }
+        ammoCount--;
+        
         foreach(var particle in muzzleFlash){
             particle.Emit(1);
         }
@@ -130,7 +138,7 @@ public class RaycastWeapon : MonoBehaviour
         var bullet = CreateBullet(raycastOrigin.position, velocity);
         bullets.Add(bullet);
 
-        recoil.GenerateRecoil();
+        recoil.GenerateRecoil(weaponName);
 
     }
     public void StopFiring() {

@@ -30101,6 +30101,8 @@ GameObject:
   - component: {fileID: 6498897590231656472}
   - component: {fileID: 419819934170055653}
   - component: {fileID: 2485322253237037460}
+  - component: {fileID: 2703188818861018388}
+  - component: {fileID: 7828994189542501985}
   m_Layer: 0
   m_Name: WeaponPistol
   m_TagString: Untagged
@@ -30127,6 +30129,7 @@ Transform:
   - {fileID: 1068203547577013475}
   - {fileID: 8633390336053848201}
   - {fileID: 829467817905029184}
+  - {fileID: 8252872939524016678}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30207,8 +30210,8 @@ MonoBehaviour:
   weaponSlot: 1
   isFiring: 0
   fireRate: 1
-  damage: 30
-  bulletSpeed: 1000
+  damage: 10
+  bulletSpeed: 100
   bulletDrop: 0
   muzzleFlash:
   - {fileID: 2620221698246406753}
@@ -30219,6 +30222,70 @@ MonoBehaviour:
   raycastOrigin: {fileID: 3397973312716736584}
   raycastDestination: {fileID: 0}
   weaponName: pistol
+  recoil: {fileID: 0}
+  magazine: {fileID: 1644401317881207560}
+  ammoCount: 8
+  clipSize: 8
+--- !u!114 &2703188818861018388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878916797490240316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f1a515ab2373f4dbd457021b3a4f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  cameraShake: {fileID: 0}
+  rigController: {fileID: 0}
+  recoilPattern:
+  - {x: 0, y: 0}
+  duration: 0
+--- !u!114 &7828994189542501985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878916797490240316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 3c5ae33c62ebe66489a99cc2b4536358, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 343
 --- !u!1 &9175436059292149326
 GameObject:
   m_ObjectHideFlags: 0
@@ -34880,3 +34947,70 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1001 &5048414125546228712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2486949264778190348}
+    m_Modifications:
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.069
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826962678781907168, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+      propertyPath: m_Name
+      value: MagPistol
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+--- !u!1 &1644401317881207560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5826962678781907168, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+  m_PrefabInstance: {fileID: 5048414125546228712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8252872939524016678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3785145541646352846, guid: 0f86a9dbd5b2b944287b4a9f9187b686, type: 3}
+  m_PrefabInstance: {fileID: 5048414125546228712}
+  m_PrefabAsset: {fileID: 0}
