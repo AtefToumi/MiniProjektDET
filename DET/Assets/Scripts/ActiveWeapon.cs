@@ -13,7 +13,7 @@ public class ActiveWeapon : MonoBehaviour
     public Transform crossHairTarget;
     public Transform[] weaponSlots;
     RaycastWeapon[] equipped_weapons = new RaycastWeapon[2];
-    public Cinemachine.CinemachineFreeLook playerCamera;
+    public PlayerAiming playerAiming;
     public AmmoWidget ammoWidget;
 
     int activeWeaponsIndex;
@@ -80,7 +80,7 @@ public class ActiveWeapon : MonoBehaviour
         }
         weapon = newWeapon;
         weapon.raycastDestination = crossHairTarget;
-        weapon.recoil.playerCamera = playerCamera;
+        weapon.recoil.playerAiming = playerAiming;
         weapon.recoil.rigController = rigController;
         weapon.transform.SetParent(weaponSlots[weaponSlotIndex], false);
         equipped_weapons[weaponSlotIndex] = weapon;  
