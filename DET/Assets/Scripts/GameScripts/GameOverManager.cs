@@ -25,16 +25,16 @@ public class GameOverManager : MonoBehaviour
  
 
     
-    void Update()
-    {
-        if(playerHealth.currentHealth <= 0 )
-        {
-            anim.SetTrigger("GameOver");
-            restartTimer += Time.deltaTime;
-            if(restartTimer >= restartDelay)
-            {
-                Application.LoadLevel(Application.loadedLevel);
-            }
-        }
-    } 
+    // void Update()
+    // {
+    //     if(playerHealth.currentHealth <= 0 )
+    //     {
+    //         anim.SetTrigger("GameOver");
+    //         restartTimer += Time.deltaTime;
+    //         if(restartTimer >= restartDelay)
+    //         {
+    //             Application.LoadLevel(Application.loadedLevel);
+    //         }
+    //     }
+    // } 
 }
