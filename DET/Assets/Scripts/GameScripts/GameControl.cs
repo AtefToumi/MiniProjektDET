@@ -19,16 +19,16 @@ public class GameControl : MonoBehaviour
     {
 
         
-        index = PlayerPrefs.GetInt(selectedCharacterDataName, 0);
+        // index = PlayerPrefs.GetInt(selectedCharacterDataName, 0);
 
-            if(index == 1)
-            {
-                player.SetActive(true);
-            }
-            else
-            {
-                playerTwo.SetActive(true);
-            }  
+        //     if(index == 1)
+        //     {
+        //         player.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         playerTwo.SetActive(true);
+        //     }  
 
     // characterList[index].SetActive(true);      
     //player = Instantiate(characterList[index], PlayerStartPosition.position, characterList[index].transform.rotation);

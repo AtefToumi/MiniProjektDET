@@ -71,6 +71,7 @@ public class RaycastWeapon : MonoBehaviour
         float fireInterval = 1.0f / fireRate;
         while(accumulatedTime >= 0.0f){
             FireBullet();
+            ammoCount--;
             accumulatedTime -= fireInterval;
         }
     }
@@ -126,7 +127,6 @@ public class RaycastWeapon : MonoBehaviour
         if(ammoCount <= 0){
             return;
         }
-        ammoCount--;
         
         foreach(var particle in muzzleFlash){
             particle.Emit(1);
@@ -139,6 +139,7 @@ public class RaycastWeapon : MonoBehaviour
         bullets.Add(bullet);
 
         recoil.GenerateRecoil(weaponName);
+        
 
     }
     public void StopFiring() {
