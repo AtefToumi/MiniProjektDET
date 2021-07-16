@@ -10,13 +10,10 @@ public class OnDoor : MonoBehaviour
     void Awake()
     {
         anim = this.transform.parent.GetComponent<Animator>();
+        anim.SetBool("open", false);
+   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        onDoor();
-    }
 
     public void onDoor()
     {
@@ -32,7 +29,7 @@ public class OnDoor : MonoBehaviour
     IEnumerator closeDoor()
     {
         yield return new WaitForSeconds(5f);
-        anim.SetBool("close", false);
+        anim.SetBool("open", false);
         anim.SetBool("close", true);
            
      
