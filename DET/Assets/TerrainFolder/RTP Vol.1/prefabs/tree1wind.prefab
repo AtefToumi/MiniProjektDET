@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3173864226643275665}
   - component: {fileID: 3173864226639241201}
   - component: {fileID: 3173864226650817171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tree1wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3173864226640981363}
   - component: {fileID: 3173864226644372819}
   - component: {fileID: 3173864226643275667}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}

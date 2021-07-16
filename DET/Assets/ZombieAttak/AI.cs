@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class AI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
+    public Slider healthSlider;
 
     //Patroling
     public Vector3 walkPoint;
@@ -28,9 +30,14 @@ public class AI : MonoBehaviour
 
     //Animator
     Animator anim;
+    public GameObject rightHand;
 
     //Player Score
     public int scoreValue = 10;
+
+    //Zombie Expliosion
+    public GameObject orginalObject;
+    public GameObject FracturedObject;
 
     private void Awake()
     {
@@ -76,7 +83,9 @@ public class AI : MonoBehaviour
 
         if (walkPointSet)
         {
+            agent.speed = 1f;
             agent.SetDestination(walkPoint);
+
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -100,6 +109,7 @@ public class AI : MonoBehaviour
 
     private void ChasePlayer()
     {
+        agent.speed = 3.5f;
         agent.SetDestination(player.position);
     }
 
@@ -108,6 +118,7 @@ public class AI : MonoBehaviour
     private void AttackPlayer()
     {
         //enemy cann't move during Attack
+
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
@@ -115,9 +126,10 @@ public class AI : MonoBehaviour
         if (!alreadyAttacked)
         {
             //Instantiate the Grenade 
-            Rigidbody rb = Instantiate(grenade, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            Rigidbody rb = Instantiate(grenade, rightHand.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+           
             
 
             alreadyAttacked = true;
@@ -131,7 +143,9 @@ public class AI : MonoBehaviour
 
     public void TakeDamage(int damage)   //TO-DO : wird noch nicht woanders aufgerufen 
     {
+        
         health -= damage;
+        healthSlider.value = health;
 
         if (health <= 0)
         {
@@ -141,11 +155,14 @@ public class AI : MonoBehaviour
     private void DestroyEnemy()
     {
         ScoreManager.score += scoreValue;
-        anim.SetTrigger("Dead");
-        Destroy(gameObject,6f);
+        // anim.SetTrigger("Dead");
+        // Destroy(gameObject,6f);
+        Destroy(this.gameObject);
+        GameObject fractobject = Instantiate(FracturedObject, transform.position, transform.rotation); // as GameObject;
+        fractobject.GetComponent<SmallExplosion>().Explosion();
     }
 
-   /* private void OnDrawGizmosSelected()
+  /*  private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);

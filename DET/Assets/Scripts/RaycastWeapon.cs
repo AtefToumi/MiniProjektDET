@@ -106,10 +106,10 @@ public class RaycastWeapon : MonoBehaviour
                     {
                         Instantiate(bloodSplash, hitInfo.point, Quaternion.identity);
                     }
-            ZombieHealth zombiehealth = hitInfo.transform.GetComponent<ZombieHealth>();
+            AI zombiehealth = hitInfo.transform.GetComponent<AI>();
             if ( zombiehealth != null)
             {
-                    zombiehealth.TakeDamage(damage, hitInfo.point);
+                zombiehealth.TakeDamage(damage); //, hitInfo.point);
                    
             }
 

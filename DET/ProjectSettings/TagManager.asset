@@ -11,6 +11,7 @@ TagManager:
   - flash
   - door1
   - door2
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - ground
   - player
   - grass
-  - 
+  - tree
   - 
   - 
   - 
