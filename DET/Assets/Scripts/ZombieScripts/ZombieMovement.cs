@@ -30,17 +30,11 @@ public class ZombieMovement : MonoBehaviour
               zombiescreaming.Play();
            // FindObjectOfType<AudioManager>().play("zombieScreaming");
             nav.SetDestination(player.position);
-           
-
-
         }
         
       else
         {
-      
             nav.enabled = false;
-           
         } 
-        
     } 
 }

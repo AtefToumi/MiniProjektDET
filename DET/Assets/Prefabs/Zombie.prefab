@@ -1701,7 +1701,7 @@ GameObject:
   - component: {fileID: -7541745627560425897}
   - component: {fileID: 8037618501098331704}
   m_Layer: 0
-  m_Name: ZombieRig
+  m_Name: Zombie
   m_TagString: zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

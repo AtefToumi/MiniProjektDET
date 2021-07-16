@@ -20,9 +20,9 @@ public class AI : MonoBehaviour
     public float walkPointRange;
 
     //Attacking
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
-    public GameObject grenade;
+    //public float timeBetweenAttacks;
+    //bool alreadyAttacked;
+    //public GameObject grenade;
 
     //States
     public float sightRange, attackRange;
@@ -42,104 +42,87 @@ public class AI : MonoBehaviour
     private void Awake()
     {
        // player = GameObject.FindGameObjectWithTag("Player").transform ;
-        agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
+        //agent = GetComponent<NavMeshAgent>();
+        //anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange)
-        {
-            anim.SetBool("InAttackRange", false);
-            anim.SetBool("InSightRange", false);
+        //if (!playerInSightRange && !playerInAttackRange)
+        //{
+        //    anim.SetBool("InAttackRange", false);
+        //    anim.SetBool("InSightRange", false);
 
-            Patroling();
-        }
-        if (playerInSightRange && !playerInAttackRange)
-        {
-            anim.SetBool("InSightRange", true);
-            anim.SetBool("InAttackRange", false);
+        //    Patroling();
+        //}
 
-            ChasePlayer();
-        }
-        if (playerInAttackRange && playerInSightRange)
-        {
-        
-            anim.SetBool("InAttackRange", true);
-            AttackPlayer();
-        }
+       
     }
 
-    private void Patroling()
-    {
-        if (!walkPointSet)
-        {
-         SearchWalkPoint();
-        }
+    //private void Patroling()
+    //{
+    //    if (!walkPointSet)
+    //    {
+    //     SearchWalkPoint();
+    //    }
 
-        if (walkPointSet)
-        {
-            agent.speed = 1f;
-            agent.SetDestination(walkPoint);
+    //    if (walkPointSet)
+    //    {
+    //        agent.speed = 1f;
+    //        agent.SetDestination(walkPoint);
 
-        }
+    //    }
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+    //    Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;     
-    }
+    //    //Walkpoint reached
+    //    if (distanceToWalkPoint.magnitude < 1f)
+    //        walkPointSet = false;     
+    //}
 
-    private void SearchWalkPoint()
-    {
-        //Calculate random point in range
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
+    //private void SearchWalkPoint()
+    //{
+    //    //Calculate random point in range
+    //    float randomZ = Random.Range(-walkPointRange, walkPointRange);
+    //    float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+    //    walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
-    }
-
-    private void ChasePlayer()
-    {
-        agent.speed = 3.5f;
-        agent.SetDestination(player.position);
-    }
+    //    if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+    //        walkPointSet = true;
+    //}
 
 
     // Attack
-    private void AttackPlayer()
-    {
-        //enemy cann't move during Attack
+    //private void AttackPlayer()
+    //{
+    //    //enemy cann't move during Attack
 
-        agent.SetDestination(transform.position);
+    //    agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+    //    transform.LookAt(player);
 
-        if (!alreadyAttacked)
-        {
-            //Instantiate the Grenade 
-            Rigidbody rb = Instantiate(grenade, rightHand.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+    //    if (!alreadyAttacked)
+    //    {
+    //        //Instantiate the Grenade 
+    //        Rigidbody rb = Instantiate(grenade, rightHand.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+    //        rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+    //        rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
            
             
 
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
-    }
-    private void ResetAttack()
-    {
-        alreadyAttacked = false;
-    }
+    //        alreadyAttacked = true;
+    //        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+    //    }
+    //}
+    //private void ResetAttack()
+    //{
+    //    alreadyAttacked = false;
+    //}
 
     public void TakeDamage(int damage)   //TO-DO : wird noch nicht woanders aufgerufen 
     {

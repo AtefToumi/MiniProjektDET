@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45091575, g: 0.4992426, b: 0.566117, a: 1}
+  m_IndirectSpecularColor: {r: 0.44909275, g: 0.499165, b: 0.57571423, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7168,6 +7168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249825679}
   - component: {fileID: 249825680}
+  - component: {fileID: 249825681}
   m_Layer: 7
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -7219,7 +7220,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.125908, y: 1}
+    m_SensorSize: {x: 1.0237389, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7228,6 +7229,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 123106464}
+--- !u!114 &249825681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249825678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 0
 --- !u!4 &250331859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 779049045642675143, guid: 46a99db50f65446d89bffaa4715ef85c, type: 3}
@@ -20957,13 +20974,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.34275985, y: -0.6927796, z: 0.4907267, w: -0.40219328}
+  m_LocalRotation: {x: -0.254446, y: 0.7510175, z: -0.5418066, w: 0.27870348}
   m_LocalPosition: {x: 7.317, y: 10.318, z: -19.799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 383.842, y: -617.7, z: 648.05}
+  m_LocalEulerAnglesHint: {x: 497.78, y: -429.65, z: 472.5}
 --- !u!4 &707817883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2369445928731345417, guid: 01dfca12e750f452f8552d5378a18f17, type: 3}
@@ -26423,8 +26440,6 @@ MonoBehaviour:
   healthSlider: {fileID: 74397389}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 8
-  timeBetweenAttacks: 1
-  grenade: {fileID: 5017371202601973546, guid: d859e8213c8004b8581a595119d724cc, type: 3}
   sightRange: 16
   attackRange: 8
   playerInSightRange: 0
@@ -65143,7 +65158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148703359291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.613, y: 1.167, z: 93.622}
+  m_LocalPosition: {x: 122.77, y: 0, z: 93.622}
   m_LocalScale: {x: 1.199684, y: 1.199684, z: 1.199684}
   m_Children:
   - {fileID: 572617754830630024}
@@ -65683,6 +65698,7 @@ GameObject:
   - component: {fileID: 888658385}
   - component: {fileID: 888658380}
   - component: {fileID: 888658381}
+  - component: {fileID: 919132148703359292}
   m_Layer: 0
   m_Name: jill
   m_TagString: zombie
@@ -65690,6 +65706,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148703359292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148703359291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db883d7fc08d9b4c8457098943bd7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  anim: {fileID: 0}
+  player: {fileID: 4394875472254638742}
+  initialState: 2
+  agent: {fileID: 888658380}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  sightRange: 16
+  attackRange: 8
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  grenade: {fileID: 5017371202601973546, guid: d859e8213c8004b8581a595119d724cc, type: 3}
+  rightHand: {fileID: 6658966651409037136}
+  alreadyAttacked: 0
+  timeBetweenAttacks: 1.5
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointSet: 0
+  walkPointRange: 0
 --- !u!4 &936440892885444357
 Transform:
   m_ObjectHideFlags: 0
@@ -75215,7 +75265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4014514145182400556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80a739c536f5ddf49bab39bc05a901ac, type: 3}
   m_Name: 
@@ -75237,7 +75287,7 @@ MonoBehaviour:
   weaponSlots:
   - {fileID: 4284896360086209531}
   - {fileID: 4284896361371043989}
-  playerAiming: {fileID: 0}
+  playerAiming: {fileID: 4284896361446429679}
   ammoWidget: {fileID: 1899544670}
   rigController: {fileID: 4284896361792463117}
 --- !u!114 &4284896361446429676
@@ -76432,8 +76482,6 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 2
-  grenade: {fileID: 5017371202601973546, guid: d859e8213c8004b8581a595119d724cc, type: 3}
   sightRange: 20
   attackRange: 10
   playerInSightRange: 0
