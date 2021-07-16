@@ -6994,7 +6994,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9308357, y: 1}
+    m_SensorSize: {x: 1.0237389, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -55841,7 +55841,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4014514145182400556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80a739c536f5ddf49bab39bc05a901ac, type: 3}
   m_Name: 
@@ -55863,7 +55863,7 @@ MonoBehaviour:
   weaponSlots:
   - {fileID: 4284896360086209531}
   - {fileID: 4284896361371043989}
-  playerCamera: {fileID: 0}
+  playerAiming: {fileID: 4284896361446429679}
   ammoWidget: {fileID: 1899544670}
   rigController: {fileID: 4284896361792463117}
 --- !u!114 &4284896361446429676
