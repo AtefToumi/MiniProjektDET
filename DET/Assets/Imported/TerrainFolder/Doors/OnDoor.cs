@@ -9,7 +9,7 @@ public class OnDoor : MonoBehaviour
 
     void Awake()
     {
-        anim = this.transform.parent.GetComponent<Animator>();
+        anim = this.transform.parent.transform.parent.GetComponent<Animator>();
         anim.SetBool("open", false);
    
     }

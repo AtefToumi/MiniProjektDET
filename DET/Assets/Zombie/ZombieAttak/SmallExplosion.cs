@@ -24,7 +24,9 @@ public class SmallExplosion : MonoBehaviour
 
             if (rb != null)
             {
-                rb.AddExplosionForce(Random.Range(minForce, maxForce), transform.position, radius);
+                // rb.AddExplosionForce(Random.Range(minForce, maxForce), transform.position, radius);
+                rb.AddExplosionForce(maxForce , transform.position, radius);
+
             }
 
             
