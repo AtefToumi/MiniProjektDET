@@ -7220,7 +7220,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8291667, y: 1}
+    m_SensorSize: {x: 2.125908, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -64184,7 +64184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258512225642350684}
   m_LocalRotation: {x: -0, y: 0.9995929, z: -0, w: -0.028532304}
-  m_LocalPosition: {x: 143.44, y: 1.1, z: 109.2}
+  m_LocalPosition: {x: 143.44, y: 1.04, z: 109.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1413030813}
@@ -71705,7 +71705,6 @@ GameObject:
   - component: {fileID: 4284896361446429673}
   - component: {fileID: 4014514145182400557}
   - component: {fileID: 4014514145182400558}
-  - component: {fileID: 4014514145182400559}
   m_Layer: 7
   m_Name: GirlHeroTerrain
   m_TagString: Player
@@ -71748,20 +71747,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!64 &4014514145182400559
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4014514145182400556}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!64 &4020322908313683036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -71919,7 +71904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4205849310183955425}
   m_LocalRotation: {x: -0, y: 0.6547334, z: -0, w: 0.75585985}
-  m_LocalPosition: {x: 110.1, y: 1.5, z: 108}
+  m_LocalPosition: {x: 110.1, y: 1.25, z: 108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2002971181}
@@ -72353,7 +72338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4205849310183955355}
   m_LocalRotation: {x: -4.32978e-17, y: 0.7071067, z: 0.7071068, w: -4.3297806e-17}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0, z: 0}
   m_LocalScale: {x: 0.17826128, y: 0.17826128, z: 0.17826128}
   m_Children: []
   m_Father: {fileID: 4205849310183655361}
