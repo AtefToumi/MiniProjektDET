@@ -13,7 +13,7 @@ public class popUpForInfo : MonoBehaviour
         anim = popUpPanel.GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
       {
         if(other.gameObject.tag == "Player")
         {
@@ -23,7 +23,7 @@ public class popUpForInfo : MonoBehaviour
             //Time.timeScale = 0f;
             
             Invoke(nameof(close), 5f);
-            this.gameObject.SetActive(false);
+           // this.gameObject.SetActive(false);
        
         }
     }
