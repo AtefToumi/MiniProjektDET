@@ -110,12 +110,7 @@ public class RaycastWeapon : MonoBehaviour
                 {
                     zombiehealth.TakeDamage(damage); //, hitInfo.point);     
                 }
-                hitEffect.transform.position = hitInfo.point;
-                hitEffect.transform.forward = hitInfo.normal;
-                hitEffect.Emit(1);
-
-                bullet.tracer.transform.position = hitInfo.point;
-                bullet.time = maxLifeTime;
+               
             }
 
             if (hitInfo.collider.tag == "zombie")
@@ -130,16 +125,16 @@ public class RaycastWeapon : MonoBehaviour
                         zombiehealth.agent.enabled = false;
                     }
                 }
-                hitEffect.transform.position = hitInfo.point;
-                hitEffect.transform.forward = hitInfo.normal;
-                hitEffect.Emit(1);
-
-                bullet.tracer.transform.position = hitInfo.point;
-                bullet.time = maxLifeTime;
+                
             }
 
-          
-            
+            hitEffect.transform.position = hitInfo.point;
+            hitEffect.transform.forward = hitInfo.normal;
+            hitEffect.Emit(1);
+
+            bullet.tracer.transform.position = hitInfo.point;
+            bullet.time = maxLifeTime;
+
         } else {
             if(bullet.tracer != null)
             {

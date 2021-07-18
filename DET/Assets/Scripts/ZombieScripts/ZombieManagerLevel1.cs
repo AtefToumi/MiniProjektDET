@@ -22,8 +22,8 @@ public class ZombieManagerLevel1 : MonoBehaviour
         {
             if(ScoreManager.score <= 150)
             {
-                xPos = Random.Range(-7, 4);
-                zPos = Random.Range(-10, 22);
+                xPos = Random.Range(150, 170);
+                zPos = Random.Range(80, 170);
                 Instantiate(zombie, new Vector3(xPos, 0 , zPos), Quaternion.identity);
              
                 yield return new WaitForSeconds(2f);

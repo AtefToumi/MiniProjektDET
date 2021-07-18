@@ -23,13 +23,13 @@ public class AiAttackPlayerState : AiState
         zombie.anim.SetBool("InAttackRange", true);
         zombie.agent.SetDestination(zombie.transform.position);
 
-        zombie.transform.LookAt(zombie.player);
+        zombie.rightHand.transform.LookAt(zombie.player);
 
         if (!zombie.alreadyAttacked)
         {
             //Instantiate the Grenade 
             zombie.InstGrenade();
-            zombie.rb.AddForce(zombie.transform.up * 8f, ForceMode.Impulse);
+            zombie.rb.AddForce(zombie.transform.up * 5f, ForceMode.Impulse);
             zombie.rb.AddForce(zombie.transform.forward * 32f, ForceMode.Impulse);
 
             zombie.alreadyAttacked = true;
