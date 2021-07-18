@@ -12,6 +12,7 @@ TagManager:
   - door1
   - door2
   - Door
+  - ZombieGirl
   layers:
   - Default
   - TransparentFX

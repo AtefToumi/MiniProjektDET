@@ -28,7 +28,6 @@ public class ZombieAttack : MonoBehaviour
         {
             playerInRange = true;
             anim.SetBool("InRange", true);
-            Debug.Log("jetzt schon");
         }
 
        
@@ -39,7 +38,6 @@ public class ZombieAttack : MonoBehaviour
         if (other.gameObject == player)
         {
             playerInRange = false;
-            anim.SetBool("InRange", false);
         }
 
        

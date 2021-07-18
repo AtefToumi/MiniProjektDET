@@ -57,10 +57,10 @@ public class PlayerHealth : MonoBehaviour
         playerDead = true;
         anim.SetTrigger("PlayerDead");
 
-        playerMovement.enabled = false;
+        //playerMovement.enabled = false;
 
        
-        GameOver();
+        //GameOver();
     }
 
     void GameOver()

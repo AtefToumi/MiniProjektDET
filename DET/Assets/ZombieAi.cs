@@ -1,41 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class AiZombie : MonoBehaviour
+public class ZombieAi : MonoBehaviour
 {
-    [HideInInspector]public Rigidbody rb;
-    [HideInInspector]public Animator anim;
-    public Transform player;
-
-    public AiStateMachine stateMachine;
-    public AiStateId initialState;
-    public UnityEngine.AI.NavMeshAgent agent;
-    public LayerMask whatIsGround, whatIsPlayer;
-    public float sightRange, attackRange;
+    public ZombieStateMachine stateMachine;
+    public ZombieStateId initialState;
     public bool playerInSightRange, playerInAttackRange;
-    public GameObject grenade;
-    public GameObject rightHand;
-    public bool alreadyAttacked;
-    public float timeBetweenAttacks;
+    public float sightRange, attackRange;
+    public LayerMask whatIsGround, whatIsPlayer;
     public Vector3 walkPoint;
     public bool walkPointSet;
     public float walkPointRange;
-    public bool isDead;  
-
+    public NavMeshAgent agent;
+    public Animator anim;
+    public Transform playerTransform;
+    public GameObject player;
+    public float timeBetweenAttacks;
+    public bool alreadyAttacked;
+    public PlayerHealth playerHealth;
+    public int zombieDamage;
+    public bool isDead;
+    public AiConfig aiConfig;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        stateMachine = new AiStateMachine(this);
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        stateMachine.RegisterState(new AiChasePlayerState());
-        stateMachine.RegisterState(new AiAttackPlayerState());
-        stateMachine.RegisterState(new AiPatrolState());
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        aiConfig = GetComponent<AiConfig>();
+        stateMachine = new ZombieStateMachine(this);
         stateMachine.ChangeState(initialState);
+        stateMachine.RegisterState(new ZombieWanderState());
+        stateMachine.RegisterState(new ZombieChaseState());
+        stateMachine.RegisterState(new ZombieAttackState());
+        playerHealth = player.GetComponent<PlayerHealth>();
+
     }
 
     // Update is called once per frame
@@ -43,19 +47,17 @@ public class AiZombie : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        stateMachine.Update(); 
-    }
+        isDead = aiConfig.isDead; 
+        stateMachine.Update();
 
-    public void InstGrenade()
-    {
-        rb = Instantiate(grenade, rightHand.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
     }
 
     public void InvkAttack()
     {
         Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
-    private void ResetAttack()
+
+    public void ResetAttack()
     {
         alreadyAttacked = false;
     }
@@ -70,4 +72,6 @@ public class AiZombie : MonoBehaviour
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
     }
+
+    
 }

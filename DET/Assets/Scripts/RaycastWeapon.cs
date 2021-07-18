@@ -102,25 +102,50 @@ public class RaycastWeapon : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo)){
             //Debug.DrawLine(ray.origin, hitInfo.point, Color.blue, 1.0f);
 
-            if (hitInfo.collider.tag == "zombie")
-                    {
-                        Instantiate(bloodSplash, hitInfo.point, Quaternion.identity);
-                    }
-            AI zombiehealth = hitInfo.transform.GetComponent<AI>();
-            if ( zombiehealth != null)
+            if (hitInfo.collider.tag == "ZombieGirl")
             {
-                zombiehealth.TakeDamage(damage); //, hitInfo.point);
-                   
+                Instantiate(bloodSplash, hitInfo.point, Quaternion.identity);
+                AI zombiehealth = hitInfo.transform.GetComponent<AI>();
+                if (zombiehealth != null)
+                {
+                    zombiehealth.TakeDamage(damage); //, hitInfo.point);     
+                }
+                hitEffect.transform.position = hitInfo.point;
+                hitEffect.transform.forward = hitInfo.normal;
+                hitEffect.Emit(1);
+
+                bullet.tracer.transform.position = hitInfo.point;
+                bullet.time = maxLifeTime;
             }
 
-            hitEffect.transform.position = hitInfo.point;
-            hitEffect.transform.forward = hitInfo.normal;
-            hitEffect.Emit(1);
+            if (hitInfo.collider.tag == "zombie")
+            {
+                Instantiate(bloodSplash, hitInfo.point, Quaternion.identity);
+                AiConfig zombiehealth = hitInfo.transform.GetComponent<AiConfig>();
+                if (zombiehealth != null)
+                {
+                    zombiehealth.TakeDamage(damage); //, hitInfo.point);
+                    if (zombiehealth.isDead)
+                    {
+                        zombiehealth.agent.enabled = false;
+                    }
+                }
+                hitEffect.transform.position = hitInfo.point;
+                hitEffect.transform.forward = hitInfo.normal;
+                hitEffect.Emit(1);
 
-            bullet.tracer.transform.position = hitInfo.point;
-            bullet.time = maxLifeTime;
+                bullet.tracer.transform.position = hitInfo.point;
+                bullet.time = maxLifeTime;
+            }
+
+          
+            
         } else {
-            bullet.tracer.transform.position = end;
+            if(bullet.tracer != null)
+            {
+                bullet.tracer.transform.position = end;
+            }
+            
         }
     }   
     public void FireBullet(){
