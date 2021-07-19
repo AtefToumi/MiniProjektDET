@@ -30226,6 +30226,7 @@ MonoBehaviour:
   magazine: {fileID: 8469285134737548660}
   ammoCount: 30
   clipSize: 30
+  clipCount: 4
 --- !u!114 &-8150904787475238248
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,11 +23,12 @@ public class ReloadWeapon : MonoBehaviour
     {
         RaycastWeapon weapon = activeWeapon.GetActiveWeapon();
         if (weapon){
-            if (Input.GetKeyDown(KeyCode.R) || weapon.ammoCount <= 0){
+            if (Input.GetKeyDown(KeyCode.R) || weapon.ShouldReload()){
             rigController.SetTrigger("reload_weapon");
             }
             if(weapon.isFiring){
-                ammoWidget.Refresh(weapon.ammoCount);
+                ammoWidget.RefreshAmmo(weapon.ammoCount, (int)weapon.weaponSlot);
+                ammoWidget.RefreshClip(weapon.clipCount, (int)weapon.weaponSlot);
             }
         }
         
@@ -67,10 +68,20 @@ public class ReloadWeapon : MonoBehaviour
     }
     void AttachMagazine(){
         RaycastWeapon weapon = activeWeapon.GetActiveWeapon();
-        weapon.magazine.SetActive(true);
-        Destroy(magazineHand);
-        weapon.ammoCount = weapon.clipSize;
-        rigController.ResetTrigger("reload_weapon");
-        ammoWidget.Refresh(weapon.ammoCount);
+        if (weapon)
+        {
+            weapon.magazine.SetActive(true);
+            Destroy(magazineHand);
+            weapon.RefillAmmo();
+            rigController.ResetTrigger("reload_weapon");
+            if (ammoWidget)
+            {
+                ammoWidget.RefreshAmmo(weapon.ammoCount, (int)weapon.weaponSlot);
+                ammoWidget.RefreshClip(weapon.clipCount, (int)weapon.weaponSlot);
+            }
+            
         }
+        
+    }
+
 }

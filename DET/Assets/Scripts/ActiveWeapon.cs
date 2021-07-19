@@ -30,6 +30,7 @@ public class ActiveWeapon : MonoBehaviour
             Equip(existingWeapon);
         }
     }
+    
 
     public RaycastWeapon GetActiveWeapon(){
         return GetWeapon(activeWeaponsIndex);
@@ -86,7 +87,8 @@ public class ActiveWeapon : MonoBehaviour
         equipped_weapons[weaponSlotIndex] = weapon;  
 
         SetActiveWeapon(newWeapon.weaponSlot);
-        ammoWidget.Refresh(newWeapon.ammoCount);
+        ammoWidget.RefreshAmmo(weapon.ammoCount, (int)weapon.weaponSlot);
+        ammoWidget.RefreshClip(weapon.clipCount, (int)weapon.weaponSlot);
     }
 
     void ToggleActiveWeapon(){
@@ -124,12 +126,26 @@ public class ActiveWeapon : MonoBehaviour
     IEnumerator ActivateWeapon(int index){
           var weapon = GetWeapon(index);
           if(weapon){
-              rigController.SetBool("holster_weapon", false);
+            ammoWidget.RefreshAmmo(weapon.ammoCount, (int)weapon.weaponSlot);
+            ammoWidget.RefreshClip(weapon.clipCount, (int)weapon.weaponSlot);
+            rigController.SetBool("holster_weapon", false);
               rigController.Play("equip_" + weapon.weaponName);
               do {
                   yield return new WaitForEndOfFrame();
               } while(rigController.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f);
           }
           isHolstered = false;
+    }
+
+    public void RefillAmmo(int clipCount)
+    {
+        var weapon = GetActiveWeapon();
+        if (weapon)
+        {
+            weapon.clipCount += clipCount;
+            ammoWidget.RefreshAmmo(weapon.ammoCount, (int)weapon.weaponSlot);
+            ammoWidget.RefreshClip(weapon.clipCount, (int)weapon.weaponSlot);
+        }
+
     }
 }

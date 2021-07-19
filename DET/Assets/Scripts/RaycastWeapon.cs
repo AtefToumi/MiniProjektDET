@@ -29,7 +29,7 @@ public class RaycastWeapon : MonoBehaviour
 
     public int ammoCount;
     public int clipSize;
-    
+    public int clipCount;
     
     Ray ray;
     RaycastHit hitInfo;
@@ -164,5 +164,21 @@ public class RaycastWeapon : MonoBehaviour
     }
     public void StopFiring() {
         isFiring = false;
+    }
+
+    public bool ShouldReload()
+    {
+        return ammoCount == 0 && clipCount > 0;
+    }
+
+    public bool IsLowAmmo()
+    {
+        return ammoCount == 0 && clipCount == 0;
+    }
+
+    public void RefillAmmo()
+    {
+        ammoCount = clipSize;
+        clipCount--;
     }
 }
