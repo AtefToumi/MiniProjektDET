@@ -7,6 +7,7 @@ public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public float restartDelay = 5f;
+    GameObject player;
     
 
     Animator anim;
@@ -16,6 +17,8 @@ public class GameOverManager : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     public void TryAgain()
@@ -33,7 +36,7 @@ public class GameOverManager : MonoBehaviour
             restartTimer += Time.deltaTime;
             if (restartTimer >= restartDelay)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }

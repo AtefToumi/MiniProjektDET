@@ -17,6 +17,7 @@ public class Flashlight_PRO : MonoBehaviour
 	private Material ambient_light_material;
 	private Color ambient_mat_color;
 	public bool is_enabled = false;
+	public ActiveWeapon activeWeapon;
 
 
 
@@ -33,6 +34,7 @@ public class Flashlight_PRO : MonoBehaviour
 		spotlight = Lights.transform.Find ("Spotlight").GetComponent<Light> ();
 		ambient_light_material = Lights.transform.Find ("ambient").GetComponent<Renderer> ().material;
 		ambient_mat_color = ambient_light_material.GetColor ("_TintColor");
+		activeWeapon = GetComponentInParent<ActiveWeapon>();
 	}
 	
 	void Update()
