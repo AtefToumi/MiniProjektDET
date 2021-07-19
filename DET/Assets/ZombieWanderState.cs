@@ -15,29 +15,42 @@ public class ZombieWanderState : ZombieState
             zombie.stateMachine.ChangeState(ZombieStateId.Chase);
         }
 
-
-
-
-        zombie.anim.SetBool("InAttackRange", false);
-        zombie.anim.SetBool("InSightRange", false);
-
-        if (!zombie.walkPointSet)
+        if (!zombie.agent.hasPath)
         {
-            zombie.SearchWalkPoint();
+            WorldBounds worldBounds = GameObject.FindObjectOfType<WorldBounds>();
+            Vector3 min = worldBounds.Min.position;
+            Vector3 max = worldBounds.Max.position;
+
+            Vector3 randomPosition = new Vector3(
+                Random.Range(min.x, max.x),
+                Random.Range(min.y, max.y),
+                Random.Range(min.z, max.z)
+                );
+
+            zombie.agent.destination = randomPosition;
         }
 
-        if (zombie.walkPointSet)
-        {
-            zombie.agent.speed = 1f;
-            zombie.agent.SetDestination(zombie.walkPoint);
 
-        }
+        //zombie.anim.SetBool("InAttackRange", false);
+        //zombie.anim.SetBool("InSightRange", false);
 
-        Vector3 distanceToWalkPoint = zombie.transform.position - zombie.walkPoint;
+        //if (!zombie.walkPointSet)
+        //{
+        //    zombie.SearchWalkPoint();
+        //}
 
-        //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
-            zombie.walkPointSet = false;
+        //if (zombie.walkPointSet)
+        //{
+        //    zombie.agent.speed = 1f;
+        //    zombie.agent.SetDestination(zombie.walkPoint);
+
+        //}
+
+        //Vector3 distanceToWalkPoint = zombie.transform.position - zombie.walkPoint;
+
+        ////Walkpoint reached
+        //if (distanceToWalkPoint.magnitude < 1f)
+        //    zombie.walkPointSet = false;
 
 
 

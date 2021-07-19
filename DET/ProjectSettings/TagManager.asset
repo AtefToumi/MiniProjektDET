@@ -13,6 +13,10 @@ TagManager:
   - door2
   - Door
   - ZombieGirl
+  - PistolPickup
+  - RiflePickup
+  - AmmoPickup
+  - HealthPickup
   layers:
   - Default
   - TransparentFX
