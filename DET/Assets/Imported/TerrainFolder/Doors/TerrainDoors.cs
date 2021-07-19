@@ -20,12 +20,12 @@ public class TerrainDoors : MonoBehaviour
      
         if (ishitted)
         {
-            StartCoroutine(showDoorText());
+            
             Debug.Log("true");
             if(hitInfo.collider.gameObject.tag == "Door")
             {
-                
-                 
+                StartCoroutine(showDoorText());
+
                 Debug.Log("collider");
                 if (Input.GetButton("Submit"))
                 {
