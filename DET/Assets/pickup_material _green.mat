@@ -35,5 +35,5 @@ Material:
     m_Floats:
     - Fresnel: 2.04
     m_Colors:
-    - _Color: {r: 3.3220932, g: 21.7348, b: 1.820716, a: 0}
+    - _Color: {r: 1.4265567, g: 9.082411, b: 0.7608303, a: 0}
   m_BuildTextureStacks: []
