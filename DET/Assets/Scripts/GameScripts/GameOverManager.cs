@@ -36,7 +36,7 @@ public class GameOverManager : MonoBehaviour
             restartTimer += Time.deltaTime;
             if (restartTimer >= restartDelay)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(0);
             }
         }
     }

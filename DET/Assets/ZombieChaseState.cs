@@ -22,19 +22,19 @@ public class ZombieChaseState : ZombieState
 
     public void Update(ZombieAi zombie)
     {
-        if (zombie.playerInSightRange && zombie.playerInAttackRange && !zombie.isDead)
+        if (zombie.playerInSightRange && zombie.playerInAttackRange && zombie.aiConfig.health > 0)
         {
             zombie.stateMachine.ChangeState(ZombieStateId.Attack);
         }
 
-        else if (zombie.playerInAttackRange && zombie.playerInSightRange && !zombie.isDead)
+        else if (zombie.playerInAttackRange && zombie.playerInSightRange && zombie.aiConfig.health > 0)
         {
             zombie.stateMachine.ChangeState(ZombieStateId.Attack);
         }
 
         else
         {
-            if (!zombie.isDead)
+            if (zombie.aiConfig.health > 0)
             {
                 zombie.anim.SetBool("InSightRange", true);
                 zombie.anim.SetBool("InAttackRange", false);

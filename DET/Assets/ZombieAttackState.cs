@@ -25,7 +25,7 @@ public class ZombieAttackState : ZombieState
         {
             zombie.stateMachine.ChangeState(ZombieStateId.Chase);
         }
-        if (!zombie.alreadyAttacked && zombie.playerHealth.currentHealth > 0)
+        if (!zombie.alreadyAttacked && zombie.playerHealth.currentHealth > 0 && zombie.aiConfig.health > 0)
         {
             zombie.anim.SetBool("InAttackRange", true);
             zombie.playerHealth.TakeDamage(zombie.zombieDamage);
