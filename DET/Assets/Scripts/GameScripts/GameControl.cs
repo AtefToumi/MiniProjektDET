@@ -6,7 +6,7 @@ public class GameControl : MonoBehaviour
 {
     public GameObject[] characterList;
     private int index;
-    private string selectedCharacterDataName = "selectedCharacter";
+    //private string selectedCharacterDataName = "selectedCharacter";
 
   //  public Transform PlayerStartPosition;
     public GameObject player;

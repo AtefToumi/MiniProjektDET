@@ -162,6 +162,7 @@ MonoBehaviour:
   switch_sound: {fileID: 4501329843858868995}
   dust_particles: {fileID: 2666215085341099977}
   is_enabled: 0
+  activeWeapon: {fileID: 0}
 --- !u!82 &4501329843858868995
 AudioSource:
   m_ObjectHideFlags: 0
@@ -30226,7 +30227,7 @@ MonoBehaviour:
   magazine: {fileID: 8469285134737548660}
   ammoCount: 30
   clipSize: 30
-  clipCount: 4
+  clipCount: 8
 --- !u!114 &-8150904787475238248
 MonoBehaviour:
   m_ObjectHideFlags: 0
