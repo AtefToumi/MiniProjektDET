@@ -46,9 +46,9 @@ public class AiConfig : MonoBehaviour
     {
 
         health -= damage;
-        //healthSlider.value = health;
+        healthSlider.value = health;
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             Death();
         }
@@ -57,7 +57,7 @@ public class AiConfig : MonoBehaviour
     {
         StartSinking();
         isDead = true;
-        capsuleCollider.isTrigger = true;
+        //capsuleCollider.isTrigger = true;
         anim.SetTrigger("Dead");
         Destroy(this.gameObject, 5f);
     }

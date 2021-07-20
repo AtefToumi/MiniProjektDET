@@ -3787,7 +3787,7 @@ MonoBehaviour:
   capsuleCollider: {fileID: 7952761829628048202}
   isSinking: 0
   health: 100
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 7952761830844747264}
   playerHealth: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &7952761830455661376
@@ -3823,7 +3823,7 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   alreadyAttacked: 0
   playerHealth: {fileID: 0}
-  zombieDamage: 40
+  zombieDamage: 10
   isDead: 0
   aiConfig: {fileID: 0}
 --- !u!1 &7952761830455661384

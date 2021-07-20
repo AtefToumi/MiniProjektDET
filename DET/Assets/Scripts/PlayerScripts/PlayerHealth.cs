@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (healthSlider)
         {
-            
+            healthSlider.value += amount;
         }
     }
 

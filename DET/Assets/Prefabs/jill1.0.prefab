@@ -1753,7 +1753,7 @@ MonoBehaviour:
   grenade: {fileID: 5017371202601973546, guid: d859e8213c8004b8581a595119d724cc, type: 3}
   rightHand: {fileID: 8855958869780570044}
   alreadyAttacked: 0
-  timeBetweenAttacks: 1.5
+  timeBetweenAttacks: 2.4
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   walkPointRange: 4
